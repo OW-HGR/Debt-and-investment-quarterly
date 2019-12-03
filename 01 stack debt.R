@@ -34,6 +34,7 @@ Debt_1819_Q2.csv <- Debt_1819_Q2.csv %>% `colnames<-`(c(slice(Debt_1819_Q2.csv, 
 Debt_1819_Q3.csv <- Debt_1819_Q3.csv %>% `colnames<-`(c(slice(Debt_1819_Q3.csv, 2))) %>% slice(-1:-3) %>% clean_names()
 Debt_1819_Q4.csv <- Debt_1819_Q4.csv %>% `colnames<-`(c(slice(Debt_1819_Q4.csv, 2))) %>% slice(-1:-2) %>% clean_names()
 Debt_1920_Q1.csv <- Debt_1920_Q1.csv %>% `colnames<-`(c(slice(Debt_1920_Q1.csv, 2))) %>% slice(-1:-3) %>% clean_names()
+Debt_1920_Q2.csv <- Debt_1920_Q2.csv %>% `colnames<-`(c(slice(Debt_1920_Q2.csv, 2))) %>% slice(-1:-3) %>% clean_names()
 
 # reshape to long format and date
 Debt_0809.csv <- Debt_0809.csv %>% gather(LA, Value, 2:ncol(Debt_0809.csv)) %>% mutate(Date = as.Date("2009/03/31", format = "%Y/%m/%d")) %>% rename(Debt_type = local_authority)
@@ -55,9 +56,10 @@ Debt_1819_Q2.csv <- Debt_1819_Q2.csv %>% gather(LA, Value, 2:ncol(Debt_1819_Q2.c
 Debt_1819_Q3.csv <- Debt_1819_Q3.csv %>% gather(LA, Value, 2:ncol(Debt_1819_Q3.csv)) %>% mutate(Date = as.Date("2018/12/31", format = "%Y/%m/%d")) %>% rename(Debt_type = local_authority_name)  
 Debt_1819_Q4.csv <- Debt_1819_Q4.csv %>% gather(LA, Value, 2:ncol(Debt_1819_Q4.csv)) %>% mutate(Date = as.Date("2019/03/31", format = "%Y/%m/%d")) %>% rename(Debt_type = local_authority_name) 
 Debt_1920_Q1.csv <- Debt_1920_Q1.csv %>% gather(LA, Value, 2:ncol(Debt_1920_Q1.csv)) %>% mutate(Date = as.Date("2019/06/30", format = "%Y/%m/%d")) %>% rename(Debt_type = local_authority_name) 
+Debt_1920_Q2.csv <- Debt_1920_Q2.csv %>% gather(LA, Value, 2:ncol(Debt_1920_Q2.csv)) %>% mutate(Date = as.Date("2019/09/30", format = "%Y/%m/%d")) %>% rename(Debt_type = local_authority_name)
 
 # stack and tidy up
-Debt <- bind_rows(Debt_0809.csv, Debt_0910.csv, Debt_1011.csv, Debt_1112.csv, Debt_1213.csv, Debt_1314.csv, Debt_1415.csv, Debt_1516.csv, Debt_1617_Q3.csv, Debt_1617_Q4.csv, Debt_1718_Q1.csv, Debt_1718_Q2.csv, Debt_1718_Q3.csv, Debt_1718_Q4.csv, Debt_1819_Q1.csv, Debt_1819_Q2.csv, Debt_1819_Q3.csv, Debt_1819_Q4.csv, Debt_1920_Q1.csv) %>%
+Debt <- bind_rows(Debt_0809.csv, Debt_0910.csv, Debt_1011.csv, Debt_1112.csv, Debt_1213.csv, Debt_1314.csv, Debt_1415.csv, Debt_1516.csv, Debt_1617_Q3.csv, Debt_1617_Q4.csv, Debt_1718_Q1.csv, Debt_1718_Q2.csv, Debt_1718_Q3.csv, Debt_1718_Q4.csv, Debt_1819_Q1.csv, Debt_1819_Q2.csv, Debt_1819_Q3.csv, Debt_1819_Q4.csv, Debt_1920_Q1.csv, Debt_1920_Q2.csv) %>%
 	filter(!Debt_type %in% c("Country","Class of authority", "ONS code")) %>%
 		mutate(
 		Value = as.numeric(Value),
@@ -66,7 +68,7 @@ Debt <- bind_rows(Debt_0809.csv, Debt_0910.csv, Debt_1011.csv, Debt_1112.csv, De
 		LA = as.factor(LA),
 		Units = as.factor(Units))
 
-rm(Debt_0809.csv, Debt_0910.csv, Debt_1011.csv, Debt_1112.csv, Debt_1213.csv, Debt_1314.csv, Debt_1415.csv, Debt_1516.csv, Debt_1617_Q3.csv, Debt_1617_Q4.csv, Debt_1718_Q1.csv, Debt_1718_Q2.csv, Debt_1718_Q3.csv, Debt_1718_Q4.csv, Debt_1819_Q1.csv, Debt_1819_Q2.csv, Debt_1819_Q3.csv, Debt_1819_Q4.csv, Debt_1920_Q1.csv)
+rm(Debt_0809.csv, Debt_0910.csv, Debt_1011.csv, Debt_1112.csv, Debt_1213.csv, Debt_1314.csv, Debt_1415.csv, Debt_1516.csv, Debt_1617_Q3.csv, Debt_1617_Q4.csv, Debt_1718_Q1.csv, Debt_1718_Q2.csv, Debt_1718_Q3.csv, Debt_1718_Q4.csv, Debt_1819_Q1.csv, Debt_1819_Q2.csv, Debt_1819_Q3.csv, Debt_1819_Q4.csv, Debt_1920_Q1.csv, Debt_1920_Q2.csv)
 
 # -------------------------------------------------------------------------------- tidy up and write out
 #write out
