@@ -72,7 +72,7 @@ rm(Debt_0809.csv, Debt_0910.csv, Debt_1011.csv, Debt_1112.csv, Debt_1213.csv, De
 #write out
 setwd(paste(project_folder, "Intermediate outputs", sep = ""))
 
-Debt <- Debt %>% spread(Date, Value)
+#Debt <- Debt %>% spread(Date, Value)
 
 ifelse(write_out_y_n == "y", write.csv(Debt, file = "01 stack debt.csv", row.names = FALSE), "")
 

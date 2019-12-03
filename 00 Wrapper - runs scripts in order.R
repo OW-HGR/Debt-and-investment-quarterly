@@ -26,4 +26,7 @@ write_out_y_n <- "n"
 setwd(project_folder)
 source("01 stack debt.R")
 
+setwd(project_folder)
+source("02 debt standardise.R")
+
 Sys.time() - t_0
