@@ -2,7 +2,7 @@
 
 ## Convert the MHCLG debt and investment series into a consistent time series
 
-This series gives the ammount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments in various categories. Figures are for the stock at the end of the observation period rather than the flow within the period.
+This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments in various categories. Figures are for the stock at the end of the observation period rather than the flow within the period.
 
 Unusually, the scope is England, Scotland, Wales, and NI. 
 
