@@ -6,6 +6,8 @@ This series gives the amount of debt each LA holds from various categories of le
 
 Unusually, the scope is England, Scotland, Wales, and NI. 
 
-The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17. Figures 
+The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17. 
 
-This workflow applies the long data procedure described [here](https://github.com/OW-HGR/Capital-spending-outturn-2) to the MHCLG debt and investment series. 
+This workflow applies the long data procedure described [here](https://github.com/OW-HGR/Capital-spending-outturn-2): load n sheets of wide-format data, convert them to long format, stack them into one long table, merge in lookup tables with standardised forms of LA name and variable name, apply any adjustments (the only one in this case being to address a labelling error in Q3 2016-17), then convert back to wide format (for space-saving reasons) and write out. 
+
+This is the simplest of the main long data workflows (capital spending, capital financing, RO).
