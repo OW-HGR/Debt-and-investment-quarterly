@@ -8,7 +8,10 @@ The approach here irons out all this variation and produces a single, reproducib
 The workflow is broken up into thematic modules that should be run in order. If you just want the final output table, clone this project to your computer, open the script called `00 Wrapper`, and set your file path for your project folder and your output folder. If you then run `00 Wrapper` it will work through each module in order and save the output in the specified folder.
 
 ## Applying the approach to data: putting the MCHLG debt and investment series into a consistent format
-This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments in various categories. Figures are for the stock at the end of the observation period rather than the flow within the period. The geograpic scope is England, Scotland, Wales, and NI. The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17. Original tables are available [here](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance).
+MHCLG [publish a series](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance) giving the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments in various categories. 
+Figures are for the stock at the end of the observation period rather than the flow within the period. 
+The geograpic scope is England, Scotland, Wales, and NI. 
+The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17.
 
 ### Step 0: getting the data out of the tabs of the spreadsheets and into CSVs
 The published source tables have a row for each each LA, and a column for each of the variables of interest. 
