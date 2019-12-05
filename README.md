@@ -26,15 +26,25 @@ The first script, `01 stack debt.R` loads every file in the input folder and ide
 <tr><th>Wide format</th><th>Long format</th></tr>
 <tr><td>
 
-|Table 1| Middle | Table 2|
-|--|--|--|
-|a| not b|and c |
+|LA_name|Var1|Var2|Var3|
+|---|---|---|---|
+|LA_1|a|b|c|
+|LA_2|d|e|f|
+|LA_3|g|h|i|
 
 </td><td>
 
-|b|1|2|3| 
-|--|--|--|--|
-|a|s|d|f|
+|LA_name|Var|Value|
+|---|---|---|
+|LA_1|Var1|a|
+|LA_1|Var2|b|
+|LA_1|Var3|c|
+|LA_2|Var1|d|
+|LA_2|Var2|e|
+|LA_2|Var3|f|
+|LA_3|Var1|g|
+|LA_3|Var2|h|
+|LA_3|Var3|i|
 
 </td></tr> </table>
 
