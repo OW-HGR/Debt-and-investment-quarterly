@@ -16,7 +16,7 @@ The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17
 ### Step 0: getting the data out of the tabs of the spreadsheets and into CSVs
 The published source is a spreadsheet with a tab each with the balance of debt and for investments at the end of each period. Each tab has a table with a row for each each LA, and a column for each of the variables of interest. To get this into R we paste each one into a CSV and perform the minimum of manual modification. The steps are: 
 1. Open each tab in the source publication. There are 19 input sheets for debt up to Q2 2019-20.
-2. ctrl+c each table and transpose and paste-as-values into a csv. Transposition puts the names of the LAs as a row and the variables as a column, which is more tractable in R than the other way around. 
+2. Copy each table to the clipboard and transpose and paste-as-values into a csv. Transposition puts the names of the LAs as a row and the variables as a column, which is more tractable in R than the other way around. 
 3. No other changes
 
 ### Step 1: load and clean the data
@@ -46,9 +46,10 @@ The first script, `01 stack debt.R` loads every file in the input folder and ide
 |LA_3|Var3|i|
 </td></tr> </table>
 
-The coverage date is then added to each input table. The 20 input tables are then stacked into one table, 5 x 216,321.
+The coverage date is then added to each input table. The 20 input tables are then stacked into one table.
 
 ### Step 2: standardise coding of entities and variables
+The second script `02 debt standardise.R` deals with the issue of stylistic variation between releases. First, a lookup table is loaded that contains all the variations of the names of LAs that was found in previous releases of the debt and investment series, and their standardised form. This lookup is included in this repo. Here is a sample:
 
 |original_LA_name|continuity_LA_name|
 |---|---|
