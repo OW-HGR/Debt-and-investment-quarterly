@@ -24,11 +24,8 @@ The first script, `01 stack debt.R` loads every file in the input folder and ide
 
 |Wide format|Long format|
 |--|--|
-|<table> <tr><th>LA_name</th>
-  <th>Var1</th></tr>
-  <tr><td>Row 1 Column 1</td>
-  <td>Row 1 Column 2</td>
-  </tr> </table>| <table> <tr><th>Table 2 Heading 1</th><th>Table 2 Heading 2</th></tr><tr><td>Row 1 Column 1</td><td>Row 1 Column 2</td></tr> </table>|
+|<table> <tr><th>LA_name</th><th>Var1</th></tr><th>Var2</th></tr><th>Var3</th></tr><tr><td>LA_1</td><td>a</td><tr><td>b</td><td>c</td>
+</tr> </table>| <table> <tr><th>Table 2 Heading 1</th><th>Table 2 Heading 2</th></tr><tr><td>Row 1 Column 1</td><td>Row 1 Column 2</td></tr> </table>|
 
 
 
