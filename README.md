@@ -28,6 +28,11 @@ Tables are loaded and converted to a long format, where there is only one value 
 |LA_3|Var3|i|
 
 
+|original_LA_name|continuity_LA_name|
+|---|---|
+|Barking & Dagenham|Barking & Dagenham|
+|Barking and Dagenham|Barking & Dagenham|
+
 This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments in various categories. Figures are for the stock at the end of the observation period rather than the flow within the period.
 
 Unusually, the scope is England, Scotland, Wales, and NI. 
