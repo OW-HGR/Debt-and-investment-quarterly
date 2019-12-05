@@ -51,7 +51,7 @@ The coverage date is then added to each input table. The 20 input tables are the
 ### Step 2: standardise coding of entities and variables
 The second script `02 debt standardise.R` deals with the issue of stylistic variation between releases. First, a lookup table is loaded that contains all the variations of the names of LAs that was found in previous releases of the debt and investment series, and their standardised form. This lookup is included in this repo. Here is a sample:
 
-|original_LA_name|continuity_LA_name|
+|`original_LA_name`|`continuity_LA_name`|
 |---|---|
 |Brighton and Hove|Brighton & Hove|
 |Brighton & Hove|Brighton & Hove|
