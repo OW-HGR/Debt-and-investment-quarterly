@@ -1,11 +1,25 @@
-# Debt and investment series
+## Summary of the approach
+This workflow offers a way through two common problems in the analysis of public data:
+1. The most common publication format is a set of tables, in a spreadsheet or set of spreadsheets, released quarterly or annually, covering the period since the previous release. The structures and formats of these publications change between releases. Consolidating these into a single series can be labour intensive because the small variations in presentation means you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different releases.
+2. The coding of entities and variables often changes slightly between releases. `&` becomes `and`. A computer would not reconignise that this is just a coding change and would instead treat it as the end of one series and the start of a brand new one. 
 
-## Convert the MHCLG debt and investment series into a consistent time series
-This workflow addresses two common problems in the analysis of public data:
-1. Data is often distributed across multiple tabs in separate spreadsheets, with structures and formats which change between releases. There are good reasons to present data in this way but it is very fiddly to consolidate it into a single series.
-2. The coding of entities and variables often changes slightly between releases. A computer would not reconignise that this is just a coding change and would instead treat it as the end of one series and the start of a brand new one. 
+The approach here irons out all this variation and produces a single, reproducible table. It is written in such a way that it is easy to add new releases as they are published, even where this involes novel formatting or coding.
 
-The approach used here is to load each sheet, apply various manually-coded transformations to convert them into a machine-friendly format, apply lookup tables to undo the variation in coding of the entities and variables, then write out a single consitent time series. 
+The workflow is broken up into thematic modules that should be run in order. 
+
+## Applying the approach to data: putting the MCHLG debt and investment series into a consistent format
+This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments in various categories. Figures are for the stock at the end of the observation period rather than the flow within the period. The geograpic scope is England, Scotland, Wales, and NI. The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17. Original tables are available [here](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance).
+
+### Step 0: getting the data out of the tabs of the spreadsheets and into CSVs
+The published source tables have a row for each each LA, and a column for each of the variables of interest. 
+
+The data tables in this repository are done by pasting the values from the published xls/xlsx files into CSVs and performing the minimum of manual modification. The steps are: 
+1. Open each tab in the source publication. There are 77 input sheets as of 2018/19.
+2. ctrl+c each table and transpose and paste-as-values into a csv. Transposition puts the names of the LAs as a row and the variables as a column, which is more tractable in R than the other way around. 
+3. Because the sub-service areas in the original tables are given as merged cells sitting above a handful of columns, the paste-and-transpose procedure means only one of the rows inherits the sub-service area label. To manage this, manually fill in the blanks in the CSV to ensure every row has a sub-service area. Check that there are the right number of each label, as the inherited value isn't always placed in the same place.
+4. Some sheets have full stops and commas within some number and not in others. Fix this manually.
+
+
 
 ### Step 1: convert data from wide format to long format
 
@@ -46,11 +60,7 @@ Tables are loaded and converted to a long format, where there is only one value 
 
 
 
-This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments in various categories. Figures are for the stock at the end of the observation period rather than the flow within the period.
 
-Unusually, the scope is England, Scotland, Wales, and NI. 
-
-The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17. 
 
 This workflow applies the long data procedure described [here](https://github.com/OW-HGR/Capital-spending-outturn-2): 
 
