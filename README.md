@@ -6,12 +6,14 @@ This workflows takes wide-format data from various publications, converts it to 
 ### Step 1: convert data from wide format to long format
 
 Data is originally published in a wide format: a row for each LA, a column for each variable, and a value at the intersection of each. 
+
 |LA_name|Var1|Var2|Var3|
 |LA_1|a|b|c|
 |LA_2|d|e|f|
 |LA_3|g|h|i|
 
 Tables are loaded and converted to a long format, where there is only one value per row, with the metadata given as columns.
+
 |LA_name|VarValue|
 |LA_1|Var1|a|
 |LA_1|Var2|b|
