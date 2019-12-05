@@ -22,6 +22,12 @@ The published source is a spreadsheet with a tab each with the balance of debt a
 ### Step 1: load and clean the data
 The first script, `01 stack debt.R` loads every file in the input folder and identifies variable names, entitity names, and values; and marks unwanted cells for deletion. The data is originally published in a wide format, with a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns.
 
+|Wide format|Long format|
+|--|--|
+|<table> <tr><th>Table 1 Heading 1</th><th>Table 1 Heading 2</th></tr><tr><td>Row 1 Column 1</td><td>Row 1 Column 2</td></tr> </table>| <table> <tr><th>Table 2 Heading 1</th><th>Table 2 Heading 2</th></tr><tr><td>Row 1 Column 1</td><td>Row 1 Column 2</td></tr> </table>|
+
+
+
 **Wide format**
 
 |LA_name|Var1|Var2|Var3|
