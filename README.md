@@ -1,6 +1,6 @@
 ## Summary of the approach
 This workflow offers a way through two common problems in the analysis of public data:
-1. A most common publication format is a set of tables, in a spreadsheet or set of spreadsheets, released quarterly or annually, covering the period since the previous release. The structure and format of these publications changes between releases. Consolidating these into a single series can be labour intensive, because the small variations in presentation mean you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different releases.
+1. A common publication format is a set of tables, in a spreadsheet or set of spreadsheets, released quarterly or annually, covering the period since the previous release. The structure and format of these publications changes between releases. Consolidating these into a single series can be labour intensive, because the small variations in presentation mean you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different releases.
 2. The coding of entities and variables often changes slightly between releases. `&` becomes `and`. A computer would not recognise that this is just a coding change and would instead treat it as the end of one series and the start of a brand new one. 
 
 The approach here irons out all this variation and produces a single, reproducible table. It is written in such a way that it is easy to add new releases as they are published, even where this involes novel formatting or coding.
@@ -49,7 +49,7 @@ The first script, `01 stack debt.R` loads every file in the input folder and ide
 The coverage date is then added to each input table. The 20 input tables are then stacked into one table.
 
 ### Step 2: standardise coding of entities and variables
-The second script `02 debt standardise.R` deals with the issue of stylistic variation between releases. First, a lookup table is loaded that contains all the variations of the names of LAs that was found in previous releases of the debt and investment series, and their standardised form. This lookup is included in this repo. Here is a sample:
+The second script `02 debt standardise.R` deals with the issue of stylistic variation between releases. First, a lookup table is loaded that contains all the variations of the names of LAs that was found in previous releases of the debt and investment series, and their standardised form. This lookup is included in this repo, in the `Libraries` folder. Here is a sample:
 
 |`original_LA_name`|`continuity_LA_name`|
 |---|---|
@@ -57,22 +57,10 @@ The second script `02 debt standardise.R` deals with the issue of stylistic vari
 |Brighton & Hove|Brighton & Hove|
 |Brighton & Hove UA|Brighton & Hove|
 
-This lookup is merged into the long table produced in step one. An error log is automatically produced for any LA names that are in the data but missing from the lookup table, and written 
+This lookup is merged into the long table produced in step one. An error log is automatically produced for any LA names that are in the data but missing from the lookup table, and written out to the `Logs` folder in the working directory that you have set in `00 Wrapper`. If an undefined value is written out, just paste it onto the end of the `original_LA_name` column in the lookup table, and provide a corresponding value for the `continuity_LA_name` column.
 
-Each new release could potentially come with novel variations of the LA names. If a variation is introduced 
+The same process is then run for the variable, which in this case is the lender. 
 
+There is labelling error in Q3 2016-17. Short term borrowing is incorrectly labelled as long term borrowing, and the variable labelled as short term borrowing is left blank. The code fixes the labelling error.  
 
-3.  merge in lookup tables with standardised forms of LA name and variable name, write out error logs of any undefined values, apply any adjustments (the only one in this case being to address a labelling error in Q3 2016-17), then convert back to wide format (for space-saving reasons) and write out. 
-
-
-
-
-
-
-This workflow applies the long data procedure described [here](https://github.com/OW-HGR/Capital-spending-outturn-2): 
-
-This is the simplest of the main long data workflows (the others being capital spending, capital financing, RO).
-
-
-
-
+You now have a single table with four variables (LA name, lender, whether the debt is long term or short term, and the date of the observation), and 216,321 observations. As a last step, the table is converted to a wide format, with a column for each date, and written out. This final long-to-wide transformation turns it from an 8MB file to a 3.2MB file with no loss of information.
