@@ -1,7 +1,7 @@
 ## Summary of the approach
 This workflow offers a way through two common problems in the analysis of public data:
-1. The most common publication format is a set of tables, in a spreadsheet or set of spreadsheets, released quarterly or annually, covering the period since the previous release. The structures and formats of these publications change between releases. Consolidating these into a single series can be labour intensive because the small variations in presentation means you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different releases.
-2. The coding of entities and variables often changes slightly between releases. `&` becomes `and`. A computer would not reconignise that this is just a coding change and would instead treat it as the end of one series and the start of a brand new one. 
+1. A most common publication format is a set of tables, in a spreadsheet or set of spreadsheets, released quarterly or annually, covering the period since the previous release. The structure and format of these publications changes between releases. Consolidating these into a single series can be labour intensive, because the small variations in presentation mean you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different releases.
+2. The coding of entities and variables often changes slightly between releases. `&` becomes `and`. A computer would not recognise that this is just a coding change and would instead treat it as the end of one series and the start of a brand new one. 
 
 The approach here irons out all this variation and produces a single, reproducible table. It is written in such a way that it is easy to add new releases as they are published, even where this involes novel formatting or coding.
 
