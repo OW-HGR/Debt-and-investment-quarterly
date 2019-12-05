@@ -57,7 +57,9 @@ The second script `02 debt standardise.R` deals with the issue of stylistic vari
 |Brighton & Hove|Brighton & Hove|
 |Brighton & Hove UA|Brighton & Hove|
 
+This lookup is merged into the long table produced in step one. An error log is automatically produced for any LA names that are in the data but missing from the lookup table, and written 
 
+Each new release could potentially come with novel variations of the LA names. If a variation is introduced 
 
 
 3.  merge in lookup tables with standardised forms of LA name and variable name, write out error logs of any undefined values, apply any adjustments (the only one in this case being to address a labelling error in Q3 2016-17), then convert back to wide format (for space-saving reasons) and write out. 
