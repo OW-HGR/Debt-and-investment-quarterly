@@ -14,28 +14,22 @@ The geograpic scope is England, Scotland, Wales, and NI.
 The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17.
 
 ### Step 0: getting the data out of the tabs of the spreadsheets and into CSVs
-The published source tables have a row for each each LA, and a column for each of the variables of interest. 
-
-The data tables in this repository are done by pasting the values from the published xls/xlsx files into CSVs and performing the minimum of manual modification. The steps are: 
-1. Open each tab in the source publication. There are 77 input sheets as of 2018/19.
+The published source is a spreadsheet with a tab each with the balance of debt and for investments at the end of each period. Each tab has a table with a row for each each LA, and a column for each of the variables of interest. To get this into R we paste each one into a CSV and perform the minimum of manual modification. The steps are: 
+1. Open each tab in the source publication. There are 19 input sheets for debt up to Q2 2019-20.
 2. ctrl+c each table and transpose and paste-as-values into a csv. Transposition puts the names of the LAs as a row and the variables as a column, which is more tractable in R than the other way around. 
-3. Because the sub-service areas in the original tables are given as merged cells sitting above a handful of columns, the paste-and-transpose procedure means only one of the rows inherits the sub-service area label. To manage this, manually fill in the blanks in the CSV to ensure every row has a sub-service area. Check that there are the right number of each label, as the inherited value isn't always placed in the same place.
-4. Some sheets have full stops and commas within some number and not in others. Fix this manually.
+3. No other changes
 
+### Step 1: load and clean the data
+The first script, `01 stack debt.R` loads every file in the input folder and identifies variable names, entitity names, and values; and marks unwanted cells for deletion. The data is originally published in a wide format, with a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns.
 
-
-### Step 1: convert data from wide format to long format
-
-Data is originally published in a wide format: a row for each LA, a column for each variable, and a value at the intersection of each. 
-
+**Wide format**
 |LA_name|Var1|Var2|Var3|
 |---|---|---|---|
 |LA_1|a|b|c|
 |LA_2|d|e|f|
 |LA_3|g|h|i|
 
-Tables are loaded and converted to a long format, where there is only one value per row, with the metadata given as columns.
-
+**Long format**
 |LA_name|Var|Value|
 |---|---|---|
 |LA_1|Var1|a|
@@ -48,6 +42,9 @@ Tables are loaded and converted to a long format, where there is only one value 
 |LA_3|Var2|h|
 |LA_3|Var3|i|
 
+The coverage date is then added to each input table. The 20 input tables are then stacked into one table, 5 x 216,321.
+
+### Step 2: standardise coding of entities and variables
 
 |original_LA_name|continuity_LA_name|
 |---|---|
