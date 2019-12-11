@@ -20,10 +20,11 @@ The workflow is broken up into thematic modules that should be run in order. To 
 
 4. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. You can also engage the option to write out the latest working table at the end of each module. This is switched off by default but can be useful for debugging.
 
-If you then run `00 Wrapper` it will work load the required libraries and run through each module in order and save the output in the specified folder.
+If you then run `00 Wrapper` it will work load the required libraries, run through each module in order, and save the output in the specified folder.
 
 ### Step 1: load and clean the data
-The first script, `01 read straight from xlsx.R` loads each tab from the published sheets from the input folder and identifies which cells contain variable names, entity names, or values. This identification was done manually, because we can't tolerate the risk of error in fuzzy matching. 20 tabs are used as of Q2 2019-20.
+The first script, `01 read straight from xlsx.R` loads each tab from the published sheets from the input folder, sets the column names from whichever row they are in, and drops any blank rows from the top of the sheet. The identification of the row with the column names 
+was done manually because we want to be extra sure that we've got the right value. 20 tabs are used as of Q2 2019-20.
 
 The data is originally published in a wide format, with a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns. More on the difference between wide data and long data [here](https://en.wikipedia.org/wiki/Wide_and_narrow_data)
 
