@@ -1,5 +1,5 @@
 ## Summary of the approach
-This workflow loads data that is published across different documents, consolidates it into a single table, and irons out any differences in layout and coding between publications. It is written to be easy to add new releases as they are published.
+This workflow loads data that is published across different documents, consolidates it into a single table, and irons out any differences in layout and coding between publications. It is written to be easy to extend it by adding new releases as they are published.
 
 ## Applying the approach to data
 The approach can be applied to lots of different publications. Here, it is applied to the MCHLG debt and investment series. This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments by category of investment. Main points to note on the data:
@@ -56,8 +56,8 @@ You now have a single table 218,358 rows, each with a single observation and sev
 3. the counterparty (UK banks, PWLB etc)
 4. whether the debt is long term or short term
 5. the date of the observation
-6. the units (£ms),
-7. the filename of the source publication)
+6. the units (£ms)
+7. the filename of the source publication
 
 As a last step, the table is written out to the output folder you have set in `00 Wrapper`. 
 
@@ -73,5 +73,3 @@ If the script is working correctly there will be no entries in the error logs fo
 Unless stated otherwise, the codebase is released under [the MIT License](https://github.com/OW-HGR/Debt-and-investment-quarterly/blob/master/LICENCE.txt). This covers both the codebase and any sample code in the documentation.
 
 The documentation is [© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/) and available under the terms of the [Open Government 3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) licence.
-
-
