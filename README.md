@@ -9,15 +9,15 @@ The workflow is broken up into thematic modules that should be run in order. If 
 
 ## Applying the approach to data: putting the MCHLG debt and investment series into a consistent format
 MHCLG [publish a series](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance) giving the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments by category of investment. 
-Figures are for the stock at the end of the observation period rather than the flow within the period. 
-The geographic  scope is England, Scotland, Wales, and NI. 
-The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17.
+* Figures are for the stock at the end of the observation period rather than the flow within the period. 
+* The geographic  scope is England, Scotland, Wales, and NI. 
+* The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17.
 The publication gives the last few quarters and the last few years. This means older data is removed from GOV.UK. MHCLG can supply older publications. 
 
 The publications used here are:
-`Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
-`Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
-`Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
+* `Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
+* `Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
+* `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
 
 Each sheet contains a series of tabs; each tab has a table with a row for each LA, and a column for each of the variables of interest. 
 
