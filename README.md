@@ -1,11 +1,11 @@
 ## Summary of the approach
 This workflow offers a way through two common problems in the analysis of public data:
-1. A common publication format is a set of tables, in a spreadsheet or set of spreadsheets, released quarterly or annually, covering the period since the previous release. The structure and format of these publications changes between releases. Consolidating these into a single series can be labour intensive, because the small variations in presentation mean you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different releases.
+1. Data is often scattered across many different documents with slightly different formats and layouts. Consolidating these into a single series is tricky because you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different publications.
 2. The coding of entities and variables often changes slightly between releases. `&` becomes `and`. A computer would not recognise that this is just a coding change and would instead treat it as the end of one series and the start of a brand new one. 
 
 The approach here irons out all this variation and produces a single, reproducible table. It is written to be easy to add new releases as they are published, even where this involves novel formatting or coding.
 
-The workflow is broken up into thematic modules that should be run in order. If you just want the final output table, clone this project to your computer, open the script called `00 Wrapper`, and set your file path for your project folder and your output folder. If you then run `00 Wrapper` it will work through each module in order and save the output in the specified folder.
+The workflow is broken up into thematic modules that should be run in order. If you just want the final output table, clone this project to your computer, get the data, open the script called `00 Wrapper`, and set your file path for your project folder and your output folder. If you then run `00 Wrapper` it will work through each module in order and save the output in the specified folder.
 
 ## Applying the approach to data: putting the MCHLG debt and investment series into a consistent format
 MHCLG [publish a series](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance) giving the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments by category of investment. 
