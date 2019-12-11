@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------------- load data
-setwd(paste(project_folder, "Source data - not tracked - no transposition", sep = ""))
+setwd(paste(project_folder, "Source data", sep = ""))
 
 # need to use a few publications as the newer ones drop older quarters
 Q2_2019_20 <- "Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx" 
@@ -30,7 +30,7 @@ read <- function(sheet_name, tab_number, col_name_row_num, drop_depth) {
 	`colnames<-`(c(slice(read_excel(sheet_name, tab_number), col_name_row_num))) %>% 	# identify the row with the column names, and apply them to the columns
 	clean_names() %>% 																									# set varnames to lower case, remove special characters, unique-ify duplicate names
 	slice(-1:drop_depth)																								# drop unwanted top rows, to a depth of x from the top
-	}
+}
 
 # -------------------------------------------------------------------------------- Debt
 #								1 load tab, label	cols, drop blanks		2 convert from wide to long			 3 add date label											4 add the name of the tab in the source publication

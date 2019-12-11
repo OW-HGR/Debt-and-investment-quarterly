@@ -123,7 +123,6 @@ debt_and_investments <- bind_rows(
 		filter(!(Counterparty == "Local authorities" & stock == "Debt" & Date == as.Date("2016-12-31", format = "%Y-%m-%d")))
 	)
 
-
 debt_and_investments <- debt_and_investments %>%
 	mutate(
 		Term = as.factor(Term),
@@ -138,4 +137,3 @@ debt_and_investments_wide <- debt_and_investments %>% select(-source_publication
 write.csv(debt_and_investments, file = "Debt holdings outturn, 2008-09 to Q2 2019.csv", row.names = FALSE)
 
 rm(debt_and_investments_wide)
-
