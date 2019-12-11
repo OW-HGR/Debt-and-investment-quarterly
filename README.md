@@ -24,31 +24,7 @@ Each sheet contains a series of tabs; each tab has a table with a row for each L
 ### Step 1: load and clean the data
 The first script, `01 read straight from xlsx.R` loads each tab from the published sheets from the input folder and identifies which cells contain variable names, entity names, or values. This identification was done manually, because we can't tolerate the risk of error in fuzzy matching. 20 tabs are used as of Q2 2019-20.
 
-The data is originally published in a wide format, with a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns.
-
-<table>
-<tr><th>Wide format</th><th>Long format</th></tr>
-<tr><td>
-  
-|LA_name|Var1|Var2|Var3|
-|---|---|---|---|
-|LA_1|a|b|c|
-|LA_2|d|e|f|
-|LA_3|g|h|i|
-</td><td>
-  
-|LA_name|Var|Value|
-|---|---|---|
-|LA_1|Var1|a|
-|LA_1|Var2|b|
-|LA_1|Var3|c|
-|LA_2|Var1|d|
-|LA_2|Var2|e|
-|LA_2|Var3|f|
-|LA_3|Var1|g|
-|LA_3|Var2|h|
-|LA_3|Var3|i|
-</td></tr> </table>
+The data is originally published in a wide format, with a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns. (If this isn't clear, see [here] (https://en.wikipedia.org/wiki/Wide_and_narrow_data).
 
 The 20 long tables are then labelled with the coverage date and the name of the original spreadsheet and tab, stacked into one table, and tidied up to remove unwanted columns and rows, and set the data types of the vectors.
 
