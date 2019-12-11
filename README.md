@@ -69,3 +69,10 @@ Three errors are identified and fixed:
 3. In Q3 2016-17, short-term inter-authority borrowing is incorrectly labelled as long-term, and the values for long-term inter-authority lending are missing. This is addressed towards the end of `02 debt standardise.R` by fixing the labelling error and setting NAs for long-term borrowing.
 
 If the script is working correctly there will be no entries in the error logs for `missing_LA_` or `missing_counterparty`, no difference between the UK total and the sum of England, Scotland, Wales, and NI, and only a single discrepancy of £6.5m between the sum of individual LAs and the UK total for short-term inter-LA borrowing in Q1 2018-19 (which is defensible as a rounding error, given that the UK total for this line is £8,820m).
+
+### Licence
+Unless stated otherwise, the codebase is released under [the MIT License](https://github.com/OW-HGR/Debt-and-investment-quarterly/blob/master/LICENCE.txt). This covers both the codebase and any sample code in the documentation.
+
+The documentation is [© Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/) and available under the terms of the [Open Government 3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) licence.
+
+
