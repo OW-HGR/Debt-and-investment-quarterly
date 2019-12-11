@@ -73,4 +73,13 @@ The data includes totals for the UK and for E/S/W/NI. This section checks that t
 
 There is labelling error in Q3 2016-17. Short term borrowing is incorrectly labelled as long term borrowing, and the variable labelled as short term borrowing is left blank. The code fixes the labelling error.  
 
-You now have a single table with five variables (LA name, whether the data is from the debt series or the investment series, the counterparty, whether the debt is long term or short term, the date of the observation, the units (£ms) and the filename of the source publication), and 218,358 observations. As a last step, the table is written out to the output folder you have set in `00 Wrapper`. 
+You now have a single table 218,358 rows, each with a single observation and seven variables:
+1. LA name
+2. whether the data is from the debt series or the investment series
+3. the counterparty (UK banks, PWLB etc)
+4. whether the debt is long term or short term
+5. the date of the observation
+6. the units (£ms),
+7. the filename of the source publication)
+
+As a last step, the table is written out to the output folder you have set in `00 Wrapper`. 
