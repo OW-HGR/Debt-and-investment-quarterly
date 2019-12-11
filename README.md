@@ -26,9 +26,9 @@ If you then run `00 Wrapper` it will work load the required libraries, run throu
 The first script, `01 read straight from xlsx.R` loads each tab from the published sheets from the input folder, sets the column names from whichever row they are in, and drops any blank rows from the top of the sheet. The identification of the row with the column names 
 was done manually because we want to be extra sure that we've got the right value. 20 tabs are used as of Q2 2019-20.
 
-The data is originally published in a wide format, with a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns. More on the difference between wide data and long data [here](https://en.wikipedia.org/wiki/Wide_and_narrow_data)
+The data is originally published in a wide format: a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns. More on the difference between wide data and long data [here](https://en.wikipedia.org/wiki/Wide_and_narrow_data)
 
-The 20 long tables are then labelled with the coverage date and the name of the original spreadsheet and tab, stacked into one table, and tidied up to remove unwanted columns and rows, and set the data types of the vectors.
+The 20 long tables are then labelled with the coverage date and the name of the original spreadsheet and tab, stacked into one table, tidied up to remove unwanted columns and rows, and formatted to set the data types of the vectors to numerics and factors.
 
 Because tabs are loaded by index number rather than name, and dates are added manually, there is a risk that the wrong date is applied. There is a check built in here that write a table showing the date and tab name. Just check that they are aligned. 
 
@@ -45,13 +45,11 @@ LA names are addressed first. A lookup table is loaded that contains all the var
 |Brighton & Hove|Brighton & Hove|
 |Brighton & Hove UA|Brighton & Hove|
 
-This lookup is merged into the long table produced in step one. An error log is automatically produced for any LA names that are in the data but missing from the lookup table, and written out to the `Logs` folder in the working directory that you have set in `00 Wrapper`. If an undefined value is written out, just paste it onto the end of the `original_LA_name` column in the lookup table, and provide a corresponding value for the `continuity_LA_name` column. This is done on names rather than ecode because not all datasets contain an ecode, and because a mis-labelled ecode is more likley to go unnoticed. 
+This lookup is merged into the long table produced in step one. An error log is automatically produced for any LA names that are in the data but missing from the lookup table, and written out to the `Logs` folder in the working directory that you have set in `00 Wrapper`. If an undefined value is written out, just paste it onto the end of the `original_LA_name` column in the lookup table, and provide a corresponding value for the `continuity_LA_name` column. This processes is based on names rather than ecode because not all datasets contain an ecode, and because a mis-labelled ecode is more likley to go unnoticed. 
 
 The same process is then run for the variable, which in this case is the lender. 
 
 The data includes totals for the UK and for E/S/W/NI. This section checks that these add up correctly and writes a table of any discrepancies. 
-
-There is labelling error in Q3 2016-17. Short term borrowing is incorrectly labelled as long term borrowing, and the variable labelled as short term borrowing is left blank. The code fixes the labelling error.  
 
 You now have a single table 218,358 rows, each with a single observation and seven variables:
 1. LA name
@@ -67,5 +65,7 @@ As a last step, the table is written out to the output folder you have set in `0
 ### Note on errors in the data
 Three errors are identified and fixed:
 1. Forest of Dean appears twice in 2008-09. This is fixed at the end of `01 read straight from xlsx.R` by removing the duplicated rows
-2. From Q4 2018-19 to Q2 2019-20 inclusive there are entries for both `Essex Police, Fire and Crime Commissioner Fire and Rescue Authority` and `Essex Police, Fire and Crime Commissioner Police Authority`. Clearly these are the same organisation. All the values for the second one are 0. All reference to the second one are flitered out in `02 debt standardise.R` just before the LA names are standardised. This is done this way rather than by coding the organisaiton name as `drop` in the lookup table in case the organisation name is used for non-zero values in the future. 
+2. From Q4 2018-19 to Q2 2019-20 inclusive there are entries for both `Essex Police, Fire and Crime Commissioner Fire and Rescue Authority` and `Essex Police, Fire and Crime Commissioner Police Authority`. Clearly these are the same organisation. All the values for the second one are 0. All reference to the second one are filtered out in `02 debt standardise.R` just before the LA names are standardised. This is done this way rather than by coding the organisaiton name as `drop` in the lookup table in case the organisation name is used for non-zero values in the future. 
 3. In Q3 2016-17, short-term inter-authority borrowing is incorrectly labelled as long-term, and the values for long-term inter-authority lending are missing. This is addressed towards the end of `02 debt standardise.R` by fixing the labelling error and setting NAs for long-term borrowing.
+
+If the script is working correctly there will be no entries in the error logs for `missing_LA_` or `missing_counterparty`, no difference between the UK total and the sum of England, Scotland, Wales, and NI, and only a single discrepancy of £6.5m between the sum of individual LAs and the UK total for short-term inter-LA borrowing in Q1 2018-19 (which is defensible as a rounding error, given that the UK total for this line is £8,820m).
