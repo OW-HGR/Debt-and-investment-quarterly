@@ -12,13 +12,12 @@ The approach can be applied to lots of different publications. Here, it is appli
 ### Step 0: set up the working environment
 The workflow is broken up into thematic modules that should be run in order. To set up your working environment:
 1. Clone this project to your computer.
-2. Create subfolders within your project folder, called `Intermediate outputs` and `Logs`.
-3. Get the data. The latest live table is available here on [on GOV.UK](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance). The publications used here are included in the repo - these are:
+2. Get the data. The latest live table is available here on [on GOV.UK](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance). The publications used here are included in the repo - these are:
      - `Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
      - `Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
      - `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
 
-4. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. You can also engage the option to write out the latest working table at the end of each module. This is switched off by default but can be useful for debugging.
+3. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. You can also engage the option to write out the latest working table at the end of each module. This is switched off by default but can be useful for debugging.
 
 If you then run `00 Wrapper` it will work load the required libraries, run through each module in order, and save the output in the specified folder.
 
