@@ -22,11 +22,7 @@ setwd(paste(project_folder, "Logs", sep = ""))
 
 write.csv(missing_counterparty, file = "missing_counterparty.csv", row.names = FALSE)
 
-<<<<<<< HEAD
 rm(counterparty_lib)
-=======
-rm(counterparty_lib, missing_counterparty)
->>>>>>> 383b6fc77c985a7fb8cf23ab954153159f5057ea
 
 debt_and_investments %<>% 
 	select(-original_counterparty) %>% 
@@ -141,8 +137,5 @@ debt_and_investments_wide <- debt_and_investments %>% select(-source_publication
 
 write.csv(debt_and_investments, file = "Debt holdings outturn, 2008-09 to Q2 2019.csv", row.names = FALSE)
 
-<<<<<<< HEAD
 rm(debt_and_investments_wide)
-=======
-rm(debt_and_investments_wide, UK_country_comparison, UK_LA_comparison)
->>>>>>> 383b6fc77c985a7fb8cf23ab954153159f5057ea
+
