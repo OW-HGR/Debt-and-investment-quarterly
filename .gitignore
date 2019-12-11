@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-Intermediate outputs/
-Source data - not tracked/
-Logs/
-Source data - not tracked - no transposition/
+Logs/missing_LA_name.csv
+Logs/missing_counterparty.csv
+Logs/missing_lender.csv
