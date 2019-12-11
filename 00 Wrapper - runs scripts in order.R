@@ -1,12 +1,17 @@
 t_0 <- Sys.time()
 #	install the required libraries and their dependencies if they are not already in place 
-if (!require(tidyverse)) install.packages('tidyverse', dependencies = TRUE)
+if(!require("foreign")) install.packages("foreign")
+if(!require("tidyverse")) install.packages("tidyverse")
+if(!require("readxl")) install.packages("readxl")
+if(!require("fs")) install.packages("fs")
+if(!require("janitor")) install.packages("janitor")
 
-# load libraries
 library(foreign)		# loads .CSVs
-library("tidyverse")	# general data handling and graphing toolbox
+library("tidyverse")	
+library("readxl")		
+library("fs")			# Provides a cross-platform, uniform interface to file system operations
+library("janitor")		# tools for cleaning messy data
 options(scipen = 999)	# disable exponential notation
-library(janitor)		# cleans inputs - sets var names to lowercase with no special characters; labels unnamed columns
 
 #	set global variables
 HMT_project_folder <- "C:/Users/RHMTOWilliamson/OneDrive - TrIS/Debt-and-investment-quarterly/"
@@ -24,7 +29,7 @@ write_out_y_n <- "n"
 
 #	run scripts. tell it to return to the project folder after each one so it can find the next script
 setwd(project_folder)
-source("01 stack debt.R")
+source("01b read straight from xslx.R")
 
 setwd(project_folder)
 source("02 debt standardise.R")
