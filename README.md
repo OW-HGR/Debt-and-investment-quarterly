@@ -1,27 +1,25 @@
 ## Summary of the approach
-This workflow offers a way through two common problems in the analysis of public data:
-1. Data is often scattered across many different documents with slightly different formats and layouts. Consolidating these into a single series is tricky because you cannot safely assume that cell X5 of the third tab will be measuring the same thing in different publications.
-2. The coding of entities and variables often changes slightly between releases. `&` becomes `and`. A computer would not recognise that this is just a coding change and would instead treat it as the end of one series and the start of a brand new one. 
-
-The approach here irons out all this variation and produces a single, reproducible table. It is written to be easy to add new releases as they are published, even where this involves novel formatting or coding.
-
-The workflow is broken up into thematic modules that should be run in order. If you just want the final output table, clone this project to your computer, get the data, open the script called `00 Wrapper`, and set your file path for your project folder and your output folder. If you then run `00 Wrapper` it will work through each module in order and save the output in the specified folder.
+This workflow consolidates data that it published across different documents into a single table, and irons out any differences in layout and coding between publications. It is written to be easy to add new releases as they are published.
 
 ## Applying the approach to data
-The approach can be applied to lots of different publications. Here, it is applied to the MCHLG debt and investment series, available in the original published form [on GOV.UK.](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance) 
-
-This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments by category of investment. 
+The approach can be applied to lots of different publications. Here, it is applied to the MCHLG debt and investment series. This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments by category of investment. 
 * Figures are for the stock at the end of the observation period rather than the flow within the period. 
 * The geographic  scope is England, Scotland, Wales, and NI. 
 * The series is annual from 2008-09 to 2015-16, and then quarterly from Q3 2016-17.
-* The publication gives the last few quarters and the last few years. This means older data is removed from GOV.UK. MHCLG can supply older publications. 
+* The published live tables give the data for the most recent few quarters and the last few years. This means older data is removed from the document published on GOV.UK.
+* Each sheet contains a series of tabs. Each tab has a table with a row for each LA, and a column for each of the variables of interest. 
 
-The publications used here are:
-* `Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
-* `Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
-* `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
+### Step 0: set up the working environment
+The workflow is broken up into thematic modules that should be run in order. To set up your working environment:
+1. Clone this project to your computer.
+2. Create subfolders within your project folder, called `Intermediate outputs`, `Logs`, and `Source data - not tracked - no transposition`
+3. Get the data. The latest live table is available here on [on GOV.UK.](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance). Older tables may be available from MCHLG. The publications used here are:
+** `Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
+** `Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
+** `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
+4. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. You can also engage the option to write out the latest working table at the end of each module. This is switched off by default but can be useful for debugging.
 
-Each sheet contains a series of tabs; each tab has a table with a row for each LA, and a column for each of the variables of interest. 
+If you then run `00 Wrapper` it will work load the required libraries and run through each module in order and save the output in the specified folder.
 
 ### Step 1: load and clean the data
 The first script, `01 read straight from xlsx.R` loads each tab from the published sheets from the input folder and identifies which cells contain variable names, entity names, or values. This identification was done manually, because we can't tolerate the risk of error in fuzzy matching. 20 tabs are used as of Q2 2019-20.
@@ -35,7 +33,9 @@ Because tabs are loaded by index number rather than name, and dates are added ma
 Finally, the table is converted back to a wide format to check that there are no duplicates.
 
 ### Step 2: standardise coding of entities and variables
-The second script `02 debt standardise.R` deals with the issue of stylistic variation between releases. First, a lookup table is loaded that contains all the variations of the names of LAs that was found in previous releases of the debt and investment series, and their standardised form. This lookup is included in this repo, in the `Libraries` folder. Here is a sample:
+The second script `02 debt standardise.R` deals with the issue of stylistic variation between releases. 
+
+LA names are addressed first. A lookup table is loaded that contains all the variations of the names of LAs that was found in previous releases of the debt and investment series, and their standardised form. This lookup is included in this repo, in the `Libraries` folder. Here is a sample:
 
 |`original_LA_name`|`continuity_LA_name`|
 |---|---|
@@ -43,7 +43,7 @@ The second script `02 debt standardise.R` deals with the issue of stylistic vari
 |Brighton & Hove|Brighton & Hove|
 |Brighton & Hove UA|Brighton & Hove|
 
-This lookup is merged into the long table produced in step one. An error log is automatically produced for any LA names that are in the data but missing from the lookup table, and written out to the `Logs` folder in the working directory that you have set in `00 Wrapper`. If an undefined value is written out, just paste it onto the end of the `original_LA_name` column in the lookup table, and provide a corresponding value for the `continuity_LA_name` column.
+This lookup is merged into the long table produced in step one. An error log is automatically produced for any LA names that are in the data but missing from the lookup table, and written out to the `Logs` folder in the working directory that you have set in `00 Wrapper`. If an undefined value is written out, just paste it onto the end of the `original_LA_name` column in the lookup table, and provide a corresponding value for the `continuity_LA_name` column. This is done on names rather than ecode because not all datasets contain an ecode, and because a mis-labelled ecode is more likley to go unnoticed. 
 
 The same process is then run for the variable, which in this case is the lender. 
 
