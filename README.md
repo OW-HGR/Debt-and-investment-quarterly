@@ -1,5 +1,5 @@
 ## Summary of the approach
-This workflow consolidates data that it published across different documents into a single table, and irons out any differences in layout and coding between publications. It is written to be easy to add new releases as they are published.
+This workflow loads data that is published across different documents, consolidates it into a single table, and irons out any differences in layout and coding between publications. It is written to be easy to add new releases as they are published.
 
 ## Applying the approach to data
 The approach can be applied to lots of different publications. Here, it is applied to the MCHLG debt and investment series. This series gives the amount of debt each LA holds from various categories of lender (PWLB, banks, bonds etc), and their investments by category of investment. 
