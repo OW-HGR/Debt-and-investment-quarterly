@@ -14,13 +14,9 @@ library("janitor")		# tools for cleaning messy data
 options(scipen = 999)	# disable exponential notation
 
 #	set global variables
-HMT_project_folder <- "C:/Users/RHMTOWilliamson/OneDrive - TrIS/Debt-and-investment-quarterly/"
-Mac_15_project_folder <- "/Users/mbp15/Dropbox/git/Debt-and-investment-quarterly/"
 
 project_folder <- Mac_15_project_folder
 
-HMT_output_folder <- "C:/Users/RHMTOWilliamson/OneDrive - TrIS/Long-data-output/"
-Mac_15_output_folder <- "/Users/mbp15/Dropbox/Output/"
 
 output_folder <- Mac_15_output_folder
 	
