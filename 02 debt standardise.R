@@ -6,36 +6,52 @@ ifelse(write_out_y_n == "y", Debt <- read.csv("01 stack debt.csv"), "")
 # -------------------------------------------------------------------------------- Standardise lender names across years
 setwd(paste(project_folder, "Libraries", sep = ""))
 
-debt_lib <- read.csv("Debt_category_library.csv") %>% 
-	unique()
+counterparty_lib <- read.csv("debt_and_investment_library.csv") %>% unique()
 
-Debt <- left_join(Debt %>% rename(original_Debt_type = Debt_type), debt_lib)
+debt_and_investments <- 
+	left_join(debt_and_investments %>% 
+	rename(original_counterparty = counterparty), counterparty_lib)
 
-missing_lender <- Debt %>% select(original_Debt_type, continuity_lender) %>%
-	filter(is.na(continuity_lender)) %>%
+missing_counterparty <- debt_and_investments %>% 
+	filter(stock == "Debt") %>%
+	select(original_counterparty, continuity_counterparty) %>%
+	filter(is.na(continuity_counterparty)) %>%
 	unique()
 
 setwd(paste(project_folder, "Logs", sep = ""))
 
-write.csv(missing_lender, file = "missing_lender.csv", row.names = FALSE)
+write.csv(missing_counterparty, file = "missing_counterparty.csv", row.names = FALSE)
 
-rm(debt_lib, missing_lender)
+rm(counterparty_lib)
 
-Debt <- Debt %>% select(-original_Debt_type) %>% rename(Lender = continuity_lender)
+debt_and_investments %<>% 
+	select(-original_counterparty) %>% 
+	rename(Counterparty = continuity_counterparty)
 
 # -------------------------------------------------------------------------------- Standardise LA names
+# some years have entries for 'Essex Police, Fire and Crime Commissioner Fire and Rescue Authority' and for 'Essex Police, Fire and Crime Commissioner Police Authority'. Clearly these are the same org. All the values for the second one are 0. Drop this one 
+# there is a section later on for fixing errors but this is added here because otherwise this step will give both entries the same name
+debt_and_investments <- debt_and_investments %>% filter(local_authority != "Essex Police, Fire and Crime Commissioner Police Authority")
+
 setwd(paste(project_folder, "Libraries", sep = ""))
 
 LA_name_lookup <- read.csv("la_names_lookup.csv") %>% unique() %>% 
 	`colnames<-` (c("original_LA_name", "continuity_LA_name")) 
 
-Debt %<>%
-	rename(original_LA_name = LA) %>% 
+debt_and_investments %<>%
+	rename(original_LA_name = local_authority) %>% 
+	mutate(
+		original_LA_name = gsub(" ", "_", original_LA_name),
+		original_LA_name = gsub("&", "", original_LA_name),
+		original_LA_name = gsub("-", "_", original_LA_name),
+		original_LA_name = gsub("__", "_", original_LA_name),
+		original_LA_name = tolower(original_LA_name)) %>%
 	left_join(LA_name_lookup)
+	
 rm(LA_name_lookup)
 
 #write out missing LA names
-missing_LA <- Debt %>%
+missing_LA <- debt_and_investments %>%
 	select(original_LA_name, continuity_LA_name) %>%
 	filter(is.na(continuity_LA_name)) %>% 
 	unique()
@@ -43,25 +59,82 @@ missing_LA <- Debt %>%
 setwd(paste(project_folder, "Logs", sep = ""))
 
 write.csv(missing_LA, file = "missing_LA_name.csv", row.names = FALSE)
-rm(missing_LA)
 
-Debt <- Debt %>% select(-original_LA_name) %>% rename(LA = continuity_LA_name) %>% select(LA, Lender, Term, Date, Units, Value)
+debt_and_investments %<>% select(-original_LA_name) %>% rename(LA = continuity_LA_name) %>% select(LA, stock, Counterparty, Term, Date, Units, value, source_publication)
 
-# --------------------------------------------  clean up, check, and write out
+# --------------------------------------------  check country and LA sums add up to published UK total
+UK_country_comparison <- full_join(
+
+	debt_and_investments %>% 
+		filter(LA %in% c("England", "Scotland", "Wales", "Northern Ireland")) %>% 
+		group_by(stock, Counterparty, Term, Date, Units, source_publication) %>%
+		summarise(value = sum(value)) %>% ungroup() %>%
+		rename(sum_of_countries = value),
+	
+	debt_and_investments %>% 
+		filter(LA == "UK") %>%
+		select(-LA) %>%
+		rename(UK_published_total = value)) %>%
+	
+	mutate(
+		diff = UK_published_total - sum_of_countries,
+		diff = round(diff, 6)) %>%
+	
+	filter(diff != 0)
+
+
+UK_LA_comparison <- full_join(
+	
+	debt_and_investments %>% 
+		filter(!LA %in% c("UK", "England", "Scotland", "Wales", "Northern Ireland")) %>% 
+		group_by(stock, Counterparty, Term, Date, Units, source_publication) %>%
+		summarise(value = sum(value)) %>% ungroup() %>%
+		rename(sum_of_LAs = value),
+	
+	debt_and_investments %>% 
+		filter(LA == "UK") %>%
+		select(-LA) %>%
+		rename(UK_published_total = value)) %>%
+	
+	mutate(
+		diff = UK_published_total - sum_of_LAs,
+		diff = round(diff, 6)) %>%
+	
+	filter(diff != 0)
+
+# --------------------------------------------  clean up any errors
 # in Q3 2016-17/ 31-12-2016, short term borrowing from other LAs is incorrectly labelled as long term borrowing, and long term borrowing is missing
 # correct labelling
 	
-Debt <- bind_rows(
-	Debt %>% filter(Lender == "Local authorities" & Date == as.Date("2016-12-31", format = "%Y-%m-%d") & Term == "Over a year") %>% mutate(Term = "Under a year"),
-	Debt %>% filter(!(Lender == "Local authorities" & Date == as.Date("2016-12-31", format = "%Y-%m-%d"))))
-													
-Debt <- Debt %>% mutate(Term = as.factor(Term))
+debt_and_investments <- bind_rows(
+	
+# this is the subset that is mislabelled as long-term - relabel it as short-term
+	debt_and_investments %>% 
+		filter(Counterparty == "Local authorities" & stock == "Debt" & Date == as.Date("2016-12-31", format = "%Y-%m-%d") & Term == "Over a year") %>% 
+		mutate(Term = "Under a year"),
+
+# this is the missing values for long-term - fill it with NAs
+	debt_and_investments %>% 
+		filter(Counterparty == "Local authorities" & stock == "Debt" & Date == as.Date("2016-12-31", format = "%Y-%m-%d") & Term == "Over a year") %>% 
+		mutate(value = NA),
+
+# this is the rest of the dataset
+	debt_and_investments %>% 
+		filter(!(Counterparty == "Local authorities" & stock == "Debt" & Date == as.Date("2016-12-31", format = "%Y-%m-%d")))
+	)
+
+
+debt_and_investments <- debt_and_investments %>%
+	mutate(
+		Term = as.factor(Term),
+		Units = as.factor(Units),
+		source_publication = as.factor(source_publication))
 
 #write out
 setwd(output_folder)
 
- Debt <- Debt %>% spread(Date, Value)
+debt_and_investments_wide <- debt_and_investments %>% select(-source_publication) %>% spread(Date, value)
 
-write.csv(Debt, file = "Debt holdings outturn, 2008-09 to Q1 2019.csv", row.names = FALSE)
+write.csv(debt_and_investments, file = "Debt holdings outturn, 2008-09 to Q2 2019.csv", row.names = FALSE)
 
-
+rm(debt_and_investments_wide)

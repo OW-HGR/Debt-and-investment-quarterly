@@ -1,0 +1,61 @@
+﻿original_counterparty,Term,continuity_counterparty
+loans_longer_term_building_societies,Over a year,Building societies
+Loans Longer-term - Building Societies,Over a year,Building societies
+loans_short_term_building_societies,Under a year,Building societies
+Loans short term - Building Societies,Under a year,Building societies
+loans_longer_term_central_government,Over a year,Central Government
+Loans Longer-term - Central Government,Over a year,Central Government
+loans_short_term_central_government,Under a year,Central Government
+Loans short term - Central Government,Under a year,Central Government
+Class of authority,drop,drop
+Country,drop,drop
+ONS code,drop,drop
+loans_longer_term_households_sector,Over a year,Household sector
+Loans Longer-term - Households sector,Over a year,Household sector
+loans_short_term_households_sector,Under a year,Household sector
+Loans short term - Households sector,Under a year,Household sector
+longer_term_loans_local_authorities,Over a year,Local authorities
+Longer Term Loans Local Authorities,Over a year,Local authorities
+short_term_loans_local_authorities,Under a year,Local authorities
+Short Term Loans Local Authorities,Under a year,Local authorities
+Loans Local Government ,Unknown,Local authorities
+securities_negotiable_bonds_commercial_paper,Over a year,Negotiable bonds and commercial paper
+Securities - Negotiable bonds & commercial paper,Over a year,Negotiable bonds and commercial paper
+loans_longer_term_other_financial_intermediaries,Over a year,Other financial intermediaries
+Loans Longer-term - Other financial intermediaries,Over a year,Other financial intermediaries
+loans_short_term_other_financial_intermediaries,Under a year,Other financial intermediaries
+Loans short term - Other financial intermediaries,Under a year,Other financial intermediaries
+loans_longer_term_other_sources,Over a year,Other lenders
+Loans Longer-term - Other Sources,Over a year,Other lenders
+loans_short_term_other_sources,Under a year,Other lenders
+Loans short term - Other Sources,Under a year,Other lenders
+securities_other_stock_issues,Over a year,Other stock issues
+Securities - Other stock issues,Over a year,Other stock issues
+loans_longer_term_private_non_financial_corporations,Over a year,Private non-financial corporations
+Loans Longer-term - Private non-financial corporations,Over a year,Private non-financial corporations
+loans_short_term_private_non_financial_corporations,Under a year,Private non-financial corporations
+Loans short term - Private non-financial corporations,Under a year,Private non-financial corporations
+loans_longer_term_public_corporations,Over a year,Public corporations
+Loans Longer-term - Public corporations,Over a year,Public corporations
+loans_short_term_public_corporations,Under a year,Public corporations
+Loans short term - Public corporations,Under a year,Public corporations
+loans_longer_term_pwlb_a,Over a year,PWLB
+Loans Longer-term - PWLB  (a),Over a year,PWLB
+Loans Longer-term - PWLB (a),Over a year,PWLB
+loans_longer_term_banks_in_uk,Over a year,UK banks
+Loans Longer-term - Banks in UK,Over a year,UK banks
+loans_short_term_banks_in_uk,Under a year,UK banks
+Loans short term - Banks in UK,Under a year,UK banks
+british_government_gilt_edge_securities,Unknown,Gilts
+certificates_of_deposit_banks,Unknown,Certificates of deposit in banks
+certificates_of_deposit_building_societies,Unknown,Certificates of deposit in building societies
+debt_management_account_deposit_facility_a,Unknown,DMADF
+deposits_banks,Unknown,UK banks
+deposits_building_societies,Unknown,Building societies
+externally_managed_funds,Unknown,Externally managed funds
+loans_local_government,Unknown,Local authorities
+money_market_funds,Unknown,Money market funds
+other_financial_intermediaries,Unknown,Other financial intermediaries
+other_investments,Unknown,Other investments
+public_corporations,Unknown,Public corporations
+treasury_bills,Unknown,Treasury bills
