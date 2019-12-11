@@ -14,9 +14,9 @@ The workflow is broken up into thematic modules that should be run in order. To 
 1. Clone this project to your computer.
 2. Create subfolders within your project folder, called `Intermediate outputs`, `Logs`, and `Source data - not tracked - no transposition`
 3. Get the data. The latest live table is available here on [on GOV.UK](https://www.gov.uk/government/statistical-data-sets/live-tables-on-local-government-finance). Older tables may be available from MCHLG. The publications used here are:
-     -`Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
-     -`Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
-     -`Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
+     - `Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
+     - `Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
+     - `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
 
 4. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. You can also engage the option to write out the latest working table at the end of each module. This is switched off by default but can be useful for debugging.
 
