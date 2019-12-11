@@ -36,3 +36,9 @@ setwd(project_folder)
 source("02 debt standardise.R")
 
 Sys.time() - t_0
+
+
+missing_LA
+missing_counterparty
+UK_country_comparison
+UK_LA_comparison
