@@ -29,7 +29,11 @@ write_out_y_n <- "n"
 
 #	run scripts. tell it to return to the project folder after each one so it can find the next script
 setwd(project_folder)
+<<<<<<< HEAD
 source("01 read straight from xslx.R")
+=======
+source("01b read straight from xslx.R")
+>>>>>>> 383b6fc77c985a7fb8cf23ab954153159f5057ea
 
 setwd(project_folder)
 source("02 debt standardise.R")
