@@ -48,11 +48,11 @@ debt_and_investments <- debt_and_investments %>%
 		Units = as.factor(Units),
 		source_publication = as.factor(source_publication))
 
-setwd(paste(project_folder, "Intermediate outputs", sep = ""))
-
 debt_and_investments_wide <- debt_and_investments %>% select(-source_publication) %>% spread(Date, value)
 
-write.csv(debt_and_investments, file = "Debt and investment outturn, 2008-09 to Q2 2019.csv", row.names = FALSE)
+setwd(paste(project_folder, "Intermediate outputs", sep = ""))
+
+ifelse(write_out_y_n == "y", write.csv(Debt, file = "02 fix errors.csv", row.names = FALSE), "")
 
 rm(debt_and_investments_wide)
 

@@ -144,6 +144,6 @@ check <- debt_and_investments %>% select(tab, Date) %>% unique()
 # -------------------------------------------------------------------------------- tidy up and write out
 setwd(paste(project_folder, "Intermediate outputs", sep = ""))
 
-ifelse(write_out_y_n == "y", write.csv(Debt, file = "01 stack debt.csv", row.names = FALSE), "")
+ifelse(write_out_y_n == "y", write.csv(Debt, file = "01 stack data.csv", row.names = FALSE), "")
 
 rm(tabs_1617, tabs_1718, tabs_1920)
