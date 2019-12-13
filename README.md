@@ -22,19 +22,24 @@ The workflow is broken up into thematic modules that should be run in order. To 
 If you then run `00 Wrapper` it will work load the required libraries, run through each module in order, and save the output in the specified folder.
 
 ### Step 1: load and clean the data
-The first script, `01 read straight from xlsx.R` loads each tab from the published sheets from the input folder, sets the column names from whichever row they are in, and drops any blank rows from the top of the sheet. The identification of the row with the column names 
-was done manually because we want to be extra sure that we've got the right value. 20 tabs are used as of Q2 2019-20.
+The first script, `01 read straight from xlsx.R` loads each tab from the published sheets from the input folder, sets the column names from whichever row they are in, and drops any blank rows from the top of the sheet. The identification of the row with the column names was done manually because we want to be extra sure that we've got the right value. 40 tabs are used as of Q2 2019-20.
 
 The data is originally published in a wide format: a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns. More on the difference between wide data and long data [here](https://en.wikipedia.org/wiki/Wide_and_narrow_data)
 
-The 20 long tables are then labelled with the coverage date and the name of the original spreadsheet and tab, stacked into one table, tidied up to remove unwanted columns and rows, and formatted to set the data types of the vectors to numerics and factors.
+The 40 long tables are then labelled with the coverage date and the name of the original spreadsheet and tab, stacked into one table, tidied up to remove unwanted columns and rows, and formatted to set the data types of the vectors to numerics and factors.
 
 Because tabs are loaded by index number rather than name, and dates are added manually, there is a risk that the wrong date is applied. There is a check built in here that write a table showing the date and tab name. Just check that they are aligned. 
 
 Finally, the table is converted back to a wide format to check that there are no duplicates.
 
-### Step 2: standardise coding of entities and variables
-The second script `02 debt standardise.R` deals with the issue of stylistic variation between releases. 
+### Step 2: fix errors
+This step fixes a few errors that have been identified in the data. These are:
+1. Forest of Dean appears twice in 2008-09. This step drops the duplicates.
+2. From Q4 2018-19 to Q2 2019-20 inclusive there are entries for both `Essex Police, Fire and Crime Commissioner Fire and Rescue Authority` and `Essex Police, Fire and Crime Commissioner Police Authority`. They seem to be the same organisation. All the values for the second one are 0. This fix this, all reference to the second one are filtered out. This is done this way rather than by coding the organisation name as `drop` in the lookup table, as a precation in case the organisation name is used for non-zero values in the future. 
+3. In Q3 2016-17, short-term inter-authority borrowing is incorrectly labelled as long-term, and the values for long-term inter-authority lending are missing. This is addressed by fixing the labelling error and setting NAs for long-term borrowing.
+
+### Step 3: standardise coding of entities and variables
+The second script `03 standardise vars and entities.R` deals with the issue of stylistic variation between releases. 
 
 LA names are addressed first. A lookup table is loaded that contains all the variations of the names of LAs that was found in previous releases of the debt and investment series, and their standardised form. This lookup is included in this repo, in the `Libraries` folder. Here is a sample:
 
@@ -50,7 +55,7 @@ The same process is then run for the variable, which in this case is the lender.
 
 The data includes totals for the UK and for E/S/W/NI. This section checks that these add up correctly and writes a table of any discrepancies. 
 
-You now have a single table 218,358 rows, each with a single observation and seven variables:
+You now have a single table 353,532 rows, each with a single observation and seven variables:
 1. LA name
 2. whether the data is from the debt series or the investment series
 3. the counterparty (UK banks, PWLB etc)
@@ -59,15 +64,7 @@ You now have a single table 218,358 rows, each with a single observation and sev
 6. the units (£ms)
 7. the filename of the source publication
 
-As a last step, the table is written out to the output folder you have set in `00 Wrapper`. 
-
-### Note on errors in the data
-Three errors are identified and fixed:
-1. Forest of Dean appears twice in 2008-09. This is fixed at the end of `01 read straight from xlsx.R` by removing the duplicated rows
-2. From Q4 2018-19 to Q2 2019-20 inclusive there are entries for both `Essex Police, Fire and Crime Commissioner Fire and Rescue Authority` and `Essex Police, Fire and Crime Commissioner Police Authority`. Clearly these are the same organisation. All the values for the second one are 0. All reference to the second one are filtered out in `02 debt standardise.R` just before the LA names are standardised. This is done this way rather than by coding the organisaiton name as `drop` in the lookup table in case the organisation name is used for non-zero values in the future. 
-3. In Q3 2016-17, short-term inter-authority borrowing is incorrectly labelled as long-term, and the values for long-term inter-authority lending are missing. This is addressed towards the end of `02 debt standardise.R` by fixing the labelling error and setting NAs for long-term borrowing.
-
-If the script is working correctly there will be no entries in the error logs for `missing_LA_` or `missing_counterparty`, no difference between the UK total and the sum of England, Scotland, Wales, and NI, and only a single discrepancy of £6.5m between the sum of individual LAs and the UK total for short-term inter-LA borrowing in Q1 2018-19 (which is defensible as a rounding error, given that the UK total for this line is £8,820m).
+As a last step, the table is written out to the output folder you have set in `00 Wrapper`, and error logs are printed in the environment. If the script is working correctly there will be no entries in the error logs for `missing_LA_` or `missing_counterparty` and no difference between the UK total and the sum of England, Scotland, Wales, and NI. There are 26 undercounts between the sum of individual LAs and the UK totals, but these are so small as to likley conceivably be rounding error.
 
 ### Licence
 Unless stated otherwise, the codebase is released under [the MIT License](https://github.com/OW-HGR/Debt-and-investment-quarterly/blob/master/LICENCE.txt). This covers both the codebase and any sample code in the documentation.

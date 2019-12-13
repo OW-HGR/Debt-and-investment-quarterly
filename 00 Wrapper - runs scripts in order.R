@@ -15,10 +15,8 @@ options(scipen = 999)	# disable exponential notation
 
 #	set global variables
 
-project_folder <- Mac_15_project_folder
-
-
-output_folder <- Mac_15_output_folder
+project_folder <- "/Users/mbp15/Dropbox/git/Debt-and-investment-quarterly/"
+output_folder <- "/Users/mbp15/Dropbox/Output/"
 	
 #	decide if you want each script to write out intermediate outputs and drop the tables, or just keep them loaded in the environment
 write_out_y_n <- "n"
@@ -26,10 +24,13 @@ write_out_y_n <- "n"
 #	run scripts. tell it to return to the project folder after each one so it can find the next script
 setwd(project_folder)
 
-source("01 read straight from xslx.R")
+source("01 stack data.R")
 
 setwd(project_folder)
-source("02 debt standardise.R")
+source("02 fix errors.R")
+
+setwd(project_folder)
+source("03 standardise vars and entities.R")
 
 Sys.time() - t_0
 
