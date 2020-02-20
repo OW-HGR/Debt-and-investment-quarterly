@@ -1,8 +1,3 @@
-# if intermediate outputs are enabled, load these outputs; else, stick with the outputs already in the environment
-setwd(paste(project_folder, "Intermediate outputs", sep = ""))
-
-ifelse(write_out_y_n == "y", Debt <- read.csv("01 stack debt.csv"), "")
-
 # -------------------------------------------------------------------------------- 1 duplicates
 
 debt_and_investments <- debt_and_investments %>% mutate(dup = duplicated(debt_and_investments))
@@ -49,12 +44,3 @@ debt_and_investments <- debt_and_investments %>%
 		source_publication = as.factor(source_publication))
 
 debt_and_investments_wide <- debt_and_investments %>% select(-source_publication) %>% spread(Date, value)
-
-setwd(paste(project_folder, "Intermediate outputs", sep = ""))
-
-ifelse(write_out_y_n == "y", write.csv(Debt, file = "02 fix errors.csv", row.names = FALSE), "")
-
-rm(debt_and_investments_wide)
-
-
-

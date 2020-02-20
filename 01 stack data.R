@@ -156,10 +156,3 @@ rm(debt, investments)
 
 # check that the dates match the labels from the tabs
 check <- debt_and_investments %>% select(tab, Date) %>% distinct()
-
-# -------------------------------------------------------------------------------- tidy up and write out
-setwd(paste(project_folder, "Intermediate outputs", sep = ""))
-
-ifelse(write_out_y_n == "y", write.csv(Debt, file = "01 stack data.csv", row.names = FALSE), "")
-
-rm(tabs_1617, tabs_1718, tabs_1920, tabs_1920_Q3)

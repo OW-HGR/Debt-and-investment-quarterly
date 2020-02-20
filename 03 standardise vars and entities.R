@@ -1,8 +1,3 @@
-# if intermediate outputs are enabled, load these outputs; else, stick with the outputs already in the environment
-setwd(paste(project_folder, "Intermediate outputs", sep = ""))
-
-ifelse(write_out_y_n == "y", Debt <- read.csv("01 stack debt.csv"), "")
-
 # -------------------------------------------------------------------------------- Standardise lender names across years
 setwd(paste(project_folder, "Libraries", sep = ""))
 
@@ -106,5 +101,5 @@ setwd(output_folder)
 debt_and_investments_wide <- debt_and_investments %>% select(-source_publication) %>% spread(Date, value)
 
 write.csv(debt_and_investments, file = "Debt and investment outturn, 2008-09 to Q3 2019.csv", row.names = FALSE)
-
+write.csv(debt_and_investments, file = "Debt and investment outturn, 2008-09 to Q3 2019 - wide format.csv", row.names = FALSE)
 rm(debt_and_investments_wide)
