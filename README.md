@@ -16,6 +16,7 @@ The workflow is broken up into thematic modules that should be run in order. To 
      - `Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
      - `Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
      - `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
+     - `Borrowing_and_Investment_Live_Table_Q3_2019_20.xlsx` for Q3 2019-20
 
 3. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. You can also toggle the option to write out the latest working table at the end of each module. This is switched off by default but can be useful for debugging.
 
@@ -53,7 +54,7 @@ The same process is then run for the variable, which in this case is the lender 
 
 The data includes totals for the UK and for E/S/W/NI. This section then checks that these add up correctly and writes a table of any discrepancies. Discrepancies under 1% are probably rounding.
 
-You now have a single table 353,532 rows, each with a single observation and seven variables:
+You now have a single table 371,008 rows, each with a single observation and seven variables:
 1. LA name
 2. whether the data is from the debt series or the investment series
 3. the counterparty (UK banks, PWLB etc)
