@@ -18,7 +18,7 @@ The workflow is broken up into thematic modules that should be run in order. To 
      - `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
      - `Borrowing_and_Investment_Live_Table_Q3_2019_20.xlsx` for Q3 2019-20
 
-3. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. You can also toggle the option to write out the latest working table at the end of each module. This is switched off by default but can be useful for debugging.
+3. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. 
 
 If you then run `00 Wrapper` it will work load the required libraries, run through each module in order, and save the output in the specified folder.
 
