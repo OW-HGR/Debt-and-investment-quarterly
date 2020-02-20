@@ -105,6 +105,6 @@ setwd(output_folder)
 
 debt_and_investments_wide <- debt_and_investments %>% select(-source_publication) %>% spread(Date, value)
 
-write.csv(debt_and_investments, file = "Debt and investment outturn, 2008-09 to Q2 2019.csv", row.names = FALSE)
+write.csv(debt_and_investments, file = "Debt and investment outturn, 2008-09 to Q3 2019.csv", row.names = FALSE)
 
 rm(debt_and_investments_wide)
