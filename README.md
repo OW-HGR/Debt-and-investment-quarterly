@@ -16,7 +16,7 @@ The workflow is broken up into thematic modules that should be run in order. To 
      - `Borrowing_and_Investment_Live_Table_Q3_2016_17 Lockdown.xlsx` for year-end totals for 2008-09 to 2015-16 inclusive, and for Q3 2016-17
      - `Borrowing_and_Investment_Live_Table_Q4_2017_18-2.xlsx` for Q4 2016-17 to Q4 2017-18 inclusive
      - `Borrowing_and_Investment_Live_Table_Q2_2019_20.xlsx` for Q1 2018-19 to Q2 2019-20 inclusive
-     - `Borrowing_and_Investment_Live_Table_Q3_2019_20.xlsx` for Q3 2019-20
+     - `Borrowing_and_Investment_Live_Table_Q4_2019_20.xlsx` for Q3 and Q4 2019-20
 
 3. Open the script called `00 Wrapper` and set your file path for your project folder and your output folder. 
 
@@ -27,7 +27,7 @@ The first module `01 stack data.R` loads each tab from the published sheets from
 
 The data is originally published in a wide format: a row for each LA, a column for each variable, and a value at the intersection of each. This script converts these to a long format, where there is only one value per row, with the metadata given as columns. More on the difference between wide data and long data [here](https://en.wikipedia.org/wiki/Wide_and_narrow_data).
 
-The 40 long tables are then labelled with the coverage date and the name of the original spreadsheet and tab, stacked into one table, tidied up to remove unwanted columns and rows, and formatted to set the data types of the vectors to numerics and factors.
+The c40 long tables are then labelled with the coverage date and the name of the original spreadsheet and tab, stacked into one table, tidied up to remove unwanted columns and rows, and formatted to set the data types of the vectors to numerics and factors.
 
 Because tabs are loaded by index number rather than name, and dates are added manually, there is a risk that the wrong date is applied. There is a check built in here that write a table showing the date and tab name. Just check that they are aligned. 
 
@@ -54,7 +54,7 @@ The same process is then run for the variable, which in this case is the lender 
 
 The data includes totals for the UK and for E/S/W/NI. This section then checks that these add up correctly and writes a table of any discrepancies. Discrepancies under 1% are probably rounding.
 
-You now have a single table 371,008 rows, each with a single observation and seven variables:
+You now have a single table 388,484 rows, each with a single observation and seven variables:
 1. LA name
 2. whether the data is from the debt series or the investment series
 3. the counterparty (UK banks, PWLB etc)

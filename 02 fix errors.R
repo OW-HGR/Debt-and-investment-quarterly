@@ -43,4 +43,6 @@ debt_and_investments <- debt_and_investments %>%
 		Units = as.factor(Units),
 		source_publication = as.factor(source_publication))
 
-debt_and_investments_wide <- debt_and_investments %>% select(-source_publication) %>% spread(Date, value)
+debt_and_investments_wide <- debt_and_investments %>% select(-c(source_publication, tab)) %>% spread(Date, value)
+
+
