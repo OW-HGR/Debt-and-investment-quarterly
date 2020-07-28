@@ -152,7 +152,7 @@ debt_and_investments <- bind_rows(debt, investments) %>%
 		value = value/1000,
 		tab = as.factor(tab),
 		stock = as.factor(stock),
-		Units = "GPBmillion") %>%
+		Units = "GBPmillion") %>%
 	filter(!is.na(local_authority)) %>%
 	filter(!is.na(value))
 

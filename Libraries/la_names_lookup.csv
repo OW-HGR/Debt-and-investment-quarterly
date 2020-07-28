@@ -1,5 +1,5 @@
 original_LA_name,continuity_LA_name
-aberconwy_colwyn_ua,Aberconwy and Colwyn
+aberconwy_colwyn_ua,Conwy
 aberdeen,Aberdeen
 aberdeenshire,Aberdeenshire
 aberdeenshire_ua,Aberdeenshire
@@ -341,8 +341,8 @@ great_yarmouth,Great Yarmouth
 greater_london_authority,Greater London Authority
 greater_london_magistrates_courts_authority,Greater London Magistrates Court Authority
 greater_manchester_combined_authority,Greater Manchester Combined Authority
-greater_manchester_fire_and_rescue_authority,Greater Manchester Fire and CD Authority
-greater_manchester_fire_cd_authority,Greater Manchester Fire and CD Authority
+greater_manchester_fire_and_rescue_authority,Greater Manchester Fire
+greater_manchester_fire_cd_authority,Greater Manchester Fire
 greater_manchester_integrated_pss_authority,Greater Manchester Integrated Transport Authority
 greater_manchester_integrated_transport_authority,Greater Manchester Integrated Transport Authority
 greater_manchester_passenger_transport_authority,Greater Manchester Integrated Transport Authority
@@ -488,8 +488,8 @@ medway_towns_ua,Medway Towns
 medway_ua,Medway Towns
 melton,Melton
 mendip,Mendip
-merseyside_fire_and_rescue_authority,Merseyside Fire and CD Authority
-merseyside_fire_cd_authority,Merseyside Fire and CD Authority
+merseyside_fire_and_rescue_authority,Merseyside Fire
+merseyside_fire_cd_authority,Merseyside Fire
 merseyside_integrated_pss_authority,Merseyside Integrated Transport Authority
 merseyside_integrated_transport_authority,Merseyside Integrated Transport Authority
 merseyside_passenger_transport_authority,Merseyside Integrated Transport Authority
@@ -734,8 +734,8 @@ south_wales_fire_and_rescue_service,South Wales Fire Authority
 south_wales_police_and_crime_commissioner_and_chief_constable,South Wales Police
 south_wales_police_authority,South Wales Police
 south_west_london_probation_committee,South West London Probation Committee
-south_yorkshire_fire_and_rescue_authority,South Yorkshire Fire and CD Authority
-south_yorkshire_fire_cd_authority,South Yorkshire Fire and CD Authority
+south_yorkshire_fire_and_rescue_authority,South Yorkshire Fire
+south_yorkshire_fire_cd_authority,South Yorkshire Fire
 south_yorkshire_integrated_pss_authority,South Yorkshire Integrated Transport Authority
 south_yorkshire_integrated_transport_authority,South Yorkshire Integrated Transport Authority
 south_yorkshire_passenger_transport_authority,South Yorkshire Integrated Transport Authority
@@ -901,8 +901,8 @@ west_suffolk,West Suffolk
 west_sussex,West Sussex
 west_wiltshire,West Wiltshire
 west_yorkshire_combined_authority,West Yorkshire Combined Authority
-west_yorkshire_fire_and_rescue_authority,West Yorkshire Fire and CD Authority
-west_yorkshire_fire_cd_authority,West Yorkshire Fire and CD Authority
+west_yorkshire_fire_and_rescue_authority,West Yorkshire Fire
+west_yorkshire_fire_cd_authority,West Yorkshire Fire
 west_yorkshire_integrated_pss_authority,West Yorkshire Integrated Transport Authority
 west_yorkshire_integrated_transport_authority,West Yorkshire Integrated Transport Authority
 west_yorkshire_passenger_transport_authority,West Yorkshire Integrated Transport Authority
