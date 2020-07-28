@@ -1,4 +1,72 @@
 original_LA_name,continuity_LA_name
+avon_somerset_police_and_crime_commissioner_and_chief_cons,Avon and Somerset Police
+avon_somerset_police_and_crime_commissioner_and_chief_constable,Avon and Somerset Police
+avon_somerset_police_authority,Avon and Somerset Police
+bath_ne_somerset_ua,Bath and North East Somerset
+bath_north_east_somerset,Bath and North East Somerset
+bath_north_east_somerset_ua,Bath and North East Somerset
+crewe_nantwich,Crewe and Nantwich
+devon_and_somerset_combined_fire_and_rescue_authority,Devon and Somerset Combined Fire Authority
+devon_and_somerset_combined_fire_authority,Devon and Somerset Combined Fire Authority
+devon_combined_fire_authority,Devon and Somerset Combined Fire Authority
+devon_cornwall_police_and_crime_commissioner_and_chief_constable,Devon and Cornwall Police
+devon_cornwall_police_authority,Devon and Cornwall Police
+devon_somerset_combined_fire_authority,Devon and Somerset Combined Fire Authority
+epsom_ewell,Epsom and Ewell
+neath_port_talbot,Neath and Port Talbot
+neath_port_talbot_ua,Neath and Port Talbot
+oadby_wigston,Oadby and Wigston
+newark_sherwood,Newark and Sherwood
+redcar_and_cleveland_ua,Redcar and Cleveland
+redcar_cleveland,Redcar and Cleveland
+redcar_cleveland_ua,Redcar and Cleveland
+barking_dagenham,Barking and Dagenham
+reigate_banstead,Reigate and Banstead
+telford_and_wrekin_ua,Telford and Wrekin
+telford_wrekin,Telford and Wrekin
+telford_wrekin_ua,Telford and Wrekin
+windsor_maidenhead,Windsor and Maidenhead
+windsor_maidenhead_ua,Windsor and Maidenhead
+brighton_hove,Brighton and Hove
+brighton_hove_ua,Brighton and Hove
+hereford_worcester_combined_fire_and_rescue_authority,Hereford and Worcester Combined Fire Authority
+hereford_worcester_combined_fire_auth,Hereford and Worcester Combined Fire Authority
+hereford_worcester_combined_fire_authority,Hereford and Worcester Combined Fire Authority
+hinckley_bosworth,Hinckley and Bosworth
+nuneaton_bedworth,Nuneaton and Bedworth
+weymouth_portland,Weymouth and Portland
+tonbridge_malling,Tonbridge and Malling
+folkestone_hythe,Folkestone and Hythe
+kensington_chelsea,Kensington and Chelsea
+shrewsbury_atcham,Shrewsbury and Atcham
+basingstoke_deane,Basingstoke and Deane
+hammersmith_fulham,Hammersmith and Fulham
+king's_lynn_west_norfolk,King's Lynn and West Norfolk
+kings_lynn_west_norfolk,King's Lynn and West Norfolk
+london_fire_and_emergency_planning_authority,London Fire and CD Authority
+cheshire_west_and_chester_ua,Cheshire West and Chester
+cheshire_west_chester,Cheshire West and Chester
+cheshire_west_chester_ua,Cheshire West and Chester
+somerset_west_taunton,Somerset West and Taunton
+ellesmere_port_neston,Ellesmere Port and Neston
+buckinghamshire_combined_fire_and_rescue_authority,Buckinghamshire and Milton Keynes Combined Fire Authority
+buckinghamshire_combined_fire_authority,Buckinghamshire and Milton Keynes Combined Fire Authority
+buckinghamshire_milton_keynes_combined_fire_authority,Buckinghamshire and Milton Keynes Combined Fire Authority
+merseyside_fire_and_rescue_authority,Merseyside Fire and CD Authority
+merseyside_fire_cd_authority,Merseyside Fire and CD Authority
+west_yorkshire_fire_and_rescue_authority,West Yorkshire Fire and CD Authority
+west_yorkshire_fire_cd_authority,West Yorkshire Fire and CD Authority
+nottinghamshire_combined_fire_and_rescue_authority,Nottinghamshire Fire and Rescue Service
+nottinghamshire_combined_fire_authority,Nottinghamshire Fire and Rescue Service
+nottinghamshire_fire_rescue_service,Nottinghamshire Fire and Rescue Service
+nottinghamshire_fire_rescue_service_(i),Nottinghamshire Fire and Rescue Service
+nottinghamshire_fire_rescue_service_i,Nottinghamshire Fire and Rescue Service
+south_yorkshire_fire_and_rescue_authority,South Yorkshire Fire and CD Authority
+south_yorkshire_fire_cd_authority,South Yorkshire Fire and CD Authority
+greater_manchester_fire_and_rescue_authority,Greater Manchester Fire and CD Authority
+greater_manchester_fire_cd_authority,Greater Manchester Fire and CD Authority
+bournemouth_christchurch_poole,"Bournemouth, Christchurch and Poole"
+"bournemouth,_christchurch_poole","Bournemouth, Christchurch and Poole"
 aberconwy_colwyn_ua,Aberconwy and Colwyn
 aberdeen,Aberdeen
 aberdeenshire,Aberdeenshire
@@ -25,25 +93,17 @@ ashfield,Ashfield
 ashford,Ashford
 avon_combined_fire_and_rescue_authority,Avon Combined Fire and Rescue Authority
 avon_combined_fire_authority,Avon Combined Fire and Rescue Authority
-avon_somerset_police_and_crime_commissioner_and_chief_cons,Avon & Somerset Police
-avon_somerset_police_and_crime_commissioner_and_chief_constable,Avon & Somerset Police
-avon_somerset_police_authority,Avon & Somerset Police
 aylesbury_vale,Aylesbury Vale
 babergh,Babergh
 ballymena,Ballymena
 ballymoney,Ballymoney
 banbridge,Banbridge
-barking_dagenham,Barking & Dagenham
 barnet,Barnet
 barnsley,Barnsley
 barrow_in_furness,Barrow-in-Furness
 barrown_furness,Barrow-in-Furness
 basildon,Basildon
-basingstoke_deane,Basingstoke & Deane
 bassetlaw,Bassetlaw
-bath_ne_somerset_ua,Bath & North East Somerset
-bath_north_east_somerset,Bath & North East Somerset
-bath_north_east_somerset_ua,Bath & North East Somerset
 bedford,Bedford
 bedford_ua,Bedford
 bedfordshire,Bedfordshire
@@ -69,9 +129,7 @@ bolsover,Bolsover
 bolton,Bolton
 boston,Boston
 bournemouth,Bournemouth
-bournemouth_christchurch_poole,"Bournemouth, Christchurch & Poole"
 bournemouth_ua,Bournemouth
-"bournemouth,_christchurch_poole","Bournemouth, Christchurch & Poole"
 bracknell_forest,Bracknell Forest
 bracknell_forest_ua,Bracknell Forest
 bradford,Bradford
@@ -82,8 +140,6 @@ brentwood,Brentwood
 bridgend,Bridgend
 bridgend_ua,Bridgend
 bridgnorth,Bridgnorth
-brighton_hove,Brighton & Hove
-brighton_hove_ua,Brighton & Hove
 bristol,Bristol
 bristol_ua,Bristol
 broadland,Broadland
@@ -92,9 +148,6 @@ bromsgrove,Bromsgrove
 broxbourne,Broxbourne
 broxtowe,Broxtowe
 buckinghamshire,Buckinghamshire
-buckinghamshire_combined_fire_and_rescue_authority,Buckinghamshire & Milton Keynes Combined Fire Authority
-buckinghamshire_combined_fire_authority,Buckinghamshire & Milton Keynes Combined Fire Authority
-buckinghamshire_milton_keynes_combined_fire_authority,Buckinghamshire & Milton Keynes Combined Fire Authority
 burnley,Burnley
 bury,Bury
 caernarfonshire_merionethshire_ua,Gwynned
@@ -143,9 +196,6 @@ cheshire_east_ua,Cheshire East
 cheshire_new,Cheshire
 cheshire_police_and_crime_commissioner_and_chief_constable,Cheshire Police
 cheshire_police_authority,Cheshire Police
-cheshire_west_and_chester_ua,Cheshire West & Chester
-cheshire_west_chester,Cheshire West & Chester
-cheshire_west_chester_ua,Cheshire West & Chester
 chester,Chester
 chester_le_street,Chester-le-Street
 chesterfield,Chesterfield
@@ -185,7 +235,6 @@ coventry,Coventry
 craigavon,Craigavon
 craven,Craven
 crawley,Crawley
-crewe_nantwich,Crewe & Nantwich
 croydon,Croydon
 cumbria,Cumbria
 cumbria_police_and_crime_commissioner_and_chief_constable,Cumbria Police
@@ -217,13 +266,7 @@ derry_city_and_strabane_i,Derry City and Strabane
 derwentside,Derwentside
 devon,Devon
 devon_(new),Devon
-devon_and_somerset_combined_fire_and_rescue_authority,Devon & Somerset Combined Fire Authority
-devon_and_somerset_combined_fire_authority,Devon & Somerset Combined Fire Authority
-devon_combined_fire_authority,Devon & Somerset Combined Fire Authority
-devon_cornwall_police_and_crime_commissioner_and_chief_constable,Devon & Cornwall Police
-devon_cornwall_police_authority,Devon & Cornwall Police
 devon_new,Devon
-devon_somerset_combined_fire_authority,Devon & Somerset Combined Fire Authority
 doncaster,Doncaster
 dorset,Dorset
 dorset_and_wiltshire_cobined_fire_authority,Dorset and Wiltshire Combined Fire Authority
@@ -286,7 +329,6 @@ eastbourne,Eastbourne
 eastleigh,Eastleigh
 eden,Eden
 edinburgh,Edinburgh
-ellesmere_port_neston,Ellesmere Port & Neston
 elmbridge,Elmbridge
 enfield,Enfield
 england,England
@@ -295,7 +337,6 @@ england_excluding_double_counting,"England (grossed, with GLA adjustment)"
 england_grossed,England (grossed)
 england_grossed_excluding_double_counting,"England (grossed, with GLA adjustment)"
 epping_forest,Epping Forest
-epsom_ewell,Epsom & Ewell
 erewash,Erewash
 essex,Essex
 essex_(new),Essex
@@ -322,7 +363,6 @@ fife,Fife
 fife_ua,Fife
 flintshire,Flintshire
 flintshire_ua,Flintshire
-folkestone_hythe,Folkestone & Hythe
 forest_heath,Forest Heath
 forest_of_dean,Forest of Dean
 fylde,Fylde
@@ -341,8 +381,6 @@ great_yarmouth,Great Yarmouth
 greater_london_authority,Greater London Authority
 greater_london_magistrates_courts_authority,Greater London Magistrates Court Authority
 greater_manchester_combined_authority,Greater Manchester Combined Authority
-greater_manchester_fire_and_rescue_authority,Greater Manchester Fire & CD Authority
-greater_manchester_fire_cd_authority,Greater Manchester Fire & CD Authority
 greater_manchester_integrated_pss_authority,Greater Manchester Integrated Transport Authority
 greater_manchester_integrated_transport_authority,Greater Manchester Integrated Transport Authority
 greater_manchester_passenger_transport_authority,Greater Manchester Integrated Transport Authority
@@ -357,7 +395,6 @@ hackney,Hackney
 halton,Halton
 halton_ua,Halton
 hambleton,Hambleton
-hammersmith_fulham,Hammersmith & Fulham
 hampshire,Hampshire
 hampshire_combined_fire_and_rescue_authority,Hampshire Combined Fire and Rescue Authority
 hampshire_combined_fire_authority,Hampshire Combined Fire and Rescue Authority
@@ -378,9 +415,6 @@ hartlepool_ua,Hartlepool
 hastings,Hastings
 havant,Havant
 havering,Havering
-hereford_worcester_combined_fire_and_rescue_authority,Hereford & Worcester Combined Fire Authority
-hereford_worcester_combined_fire_auth,Hereford & Worcester Combined Fire Authority
-hereford_worcester_combined_fire_authority,Hereford & Worcester Combined Fire Authority
 herefordshire,Herefordshire
 herefordshire_district_council,Herefordshire
 herefordshire_ua,Herefordshire
@@ -394,7 +428,6 @@ high_peak,High Peak
 highland,Highland
 highland_ua,Highland
 hillingdon,Hillingdon
-hinckley_bosworth,Hinckley & Bosworth
 horsham,Horsham
 hounslow,Hounslow
 humberside_combined_fire_and_rescue_authority,Humberside Combined Fire Authority
@@ -414,7 +447,6 @@ isle_of_wight_ua,Isle of Wight
 isles_of_scilly,Isles of Scilly
 islington,Islington
 kennet,Kennet
-kensington_chelsea,Kensington & Chelsea
 kent,Kent
 kent_(new),Kent
 kent_combined_fire_and_rescue_authority,Kent Combined Fire Authority
@@ -424,8 +456,6 @@ kent_police_and_crime_commissioner_and_chief_constable,Kent Police
 kent_police_authority,Kent Police
 kerrier,Kerrier
 kettering,Kettering
-king's_lynn_west_norfolk,King's Lynn & West Norfolk
-kings_lynn_west_norfolk,King's Lynn & West Norfolk
 kingston_upon_hull,Kingston upon Hull
 kingston_upon_hull_ua,Kingston upon Hull
 kingston_upon_thames,Kingston upon Thames
@@ -465,7 +495,6 @@ lisburn_and_castlereagh,Lisburn and Castlereagh
 liverpool,Liverpool
 liverpool_city_region_combined_authority,Liverpool City Region Combined Authority
 london_development_agency,London Development Agency
-london_fire_and_emergency_planning_authority,London Fire & CD Authority
 london_fire_cd_authority,London Fire
 london_legacy_development_corporation,London Legacy Development Corporation
 luton,Luton
@@ -488,8 +517,6 @@ medway_towns_ua,Medway Towns
 medway_ua,Medway Towns
 melton,Melton
 mendip,Mendip
-merseyside_fire_and_rescue_authority,Merseyside Fire & CD Authority
-merseyside_fire_cd_authority,Merseyside Fire & CD Authority
 merseyside_integrated_pss_authority,Merseyside Integrated Transport Authority
 merseyside_integrated_transport_authority,Merseyside Integrated Transport Authority
 merseyside_passenger_transport_authority,Merseyside Integrated Transport Authority
@@ -523,12 +550,9 @@ monmouthshire_ua,Monmouthshire
 moray,Moray
 moray_ua,Moray
 moyle,Moyle
-neath_port_talbot,Neath & Port Talbot
-neath_port_talbot_ua,Neath & Port Talbot
 new_forest,New Forest
 new_forest_national_park,New Forest National Park
 new_forest_park,New Forest National Park
-newark_sherwood,Newark & Sherwood
 newcastle_under_lyme,Newcastle-under-Lyme
 newcastle_upon_tyne,Newcastle upon Tyne
 newham,Newham
@@ -602,18 +626,11 @@ nottingham,Nottingham
 nottingham_ua,Nottingham
 nottinghamshire,Nottinghamshire
 nottinghamshire_(new),Nottinghamshire
-nottinghamshire_combined_fire_and_rescue_authority,Nottinghamshire Fire & Rescue Service
-nottinghamshire_combined_fire_authority,Nottinghamshire Fire & Rescue Service
-nottinghamshire_fire_rescue_service,Nottinghamshire Fire & Rescue Service
-nottinghamshire_fire_rescue_service_(i),Nottinghamshire Fire & Rescue Service
-nottinghamshire_fire_rescue_service_i,Nottinghamshire Fire & Rescue Service
 nottinghamshire_new,Nottinghamshire
 nottinghamshire_police_and_crime_commissioner_and_chief_constable,Nottinghamshire Police
 nottinghamshire_police_and_crime_commissioner_and_chief_constable_(i),Nottinghamshire Police
 nottinghamshire_police_and_crime_commissioner_and_chief_constable_i,Nottinghamshire Police
 nottinghamshire_police_authority,Nottinghamshire Police
-nuneaton_bedworth,Nuneaton & Bedworth
-oadby_wigston,Oadby & Wigston
 oldham,Oldham
 omagh,Omagh
 orkney,Orkney Islands
@@ -646,11 +663,7 @@ purbeck,Purbeck
 reading,Reading
 reading_ua,Reading
 redbridge,Redbridge
-redcar_and_cleveland_ua,Redcar & Cleveland
-redcar_cleveland,Redcar & Cleveland
-redcar_cleveland_ua,Redcar & Cleveland
 redditch,Redditch
-reigate_banstead,Reigate & Banstead
 renfrewshire,Renfrewshire
 renfrewshire_ua,Renfrewshire
 residuary_receiver,Residuary Receiver
@@ -692,7 +705,6 @@ sheffield_city_region_combined_authority,Sheffield City Region Combined Authorit
 shepway,Shepway
 shetland,Shetland Islands
 shetland_islands,Shetland Islands
-shrewsbury_atcham,Shrewsbury & Atcham
 shropshire,Shropshire
 shropshire_(new),Shropshire
 shropshire_combined_fire_and_rescue_authority,Shropshire Combined Fire Authority
@@ -703,7 +715,6 @@ slough,Slough
 slough_ua,Slough
 solihull,Solihull
 somerset,Somerset
-somerset_west_taunton,Somerset West & Taunton
 south_ayrshire,South Ayrshire
 south_ayrshire_ua,South Ayrshire
 south_bedfordshire,South Bedfordshire
@@ -734,8 +745,6 @@ south_wales_fire_and_rescue_service,South Wales Fire Authority
 south_wales_police_and_crime_commissioner_and_chief_constable,South Wales Police
 south_wales_police_authority,South Wales Police
 south_west_london_probation_committee,South West London Probation Committee
-south_yorkshire_fire_and_rescue_authority,South Yorkshire Fire & CD Authority
-south_yorkshire_fire_cd_authority,South Yorkshire Fire & CD Authority
 south_yorkshire_integrated_pss_authority,South Yorkshire Integrated Transport Authority
 south_yorkshire_integrated_transport_authority,South Yorkshire Integrated Transport Authority
 south_yorkshire_passenger_transport_authority,South Yorkshire Integrated Transport Authority
@@ -801,9 +810,6 @@ taunton_deane,Taunton Deane
 tees_valley_combined_authority,Tees Valley Combined Authority
 teesdale,Teesdale
 teignbridge,Teignbridge
-telford_and_wrekin_ua,Telford & Wrekin
-telford_wrekin,Telford & Wrekin
-telford_wrekin_ua,Telford & Wrekin
 tendring,Tendring
 test_valley,Test Valley
 tewkesbury,Tewkesbury
@@ -826,7 +832,6 @@ the_west_yorkshire_combined_authority,West Yorkshire Combined Authority
 three_rivers,Three Rivers
 thurrock,Thurrock
 thurrock_ua,Thurrock
-tonbridge_malling,Tonbridge & Malling
 torbay,Torbay
 torbay_ua,Torbay
 torfaen,Torfaen
@@ -901,8 +906,6 @@ west_suffolk,West Suffolk
 west_sussex,West Sussex
 west_wiltshire,West Wiltshire
 west_yorkshire_combined_authority,West Yorkshire Combined Authority
-west_yorkshire_fire_and_rescue_authority,West Yorkshire Fire & CD Authority
-west_yorkshire_fire_cd_authority,West Yorkshire Fire & CD Authority
 west_yorkshire_integrated_pss_authority,West Yorkshire Integrated Transport Authority
 west_yorkshire_integrated_transport_authority,West Yorkshire Integrated Transport Authority
 west_yorkshire_passenger_transport_authority,West Yorkshire Integrated Transport Authority
@@ -913,7 +916,6 @@ west_yorkshire_police_authority,West Yorkshire Police
 west_yorkshire_probation_committee,West Yorkshire Probation Committee
 western_riverside_waste_authority,Western Riverside Waste Authority
 westminster,Westminster
-weymouth_portland,Weymouth & Portland
 wigan,Wigan
 wiltshire,Wiltshire
 wiltshire_combined_fire_and_rescue_authority,Wiltshire Combined Fire Authority
@@ -923,8 +925,6 @@ wiltshire_police_authority,Wiltshire Police
 wiltshire_swindon_fire_authority,Wiltshire Combined Fire Authority
 wiltshire_ua,Wiltshire
 winchester,Winchester
-windsor_maidenhead,Windsor & Maidenhead
-windsor_maidenhead_ua,Windsor & Maidenhead
 wirral,Wirral
 woking,Woking
 wokingham,Wokingham
